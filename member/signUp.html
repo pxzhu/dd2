@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>회원가입 폼</title>
+	<script>
+		function checkid() {
+			var userid = document.getElementById("uid").value;
+			if (userid) {
+				url = "check.php?userid=" + userid;
+				window.open(url, "chkid", "width=300,height=100");
+			} else {
+				alert("아이디를 입력하세요");
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<form action="memberCheck.php" method="post">
+		<h1>회원가입 폼</h1>
+		<fieldset>
+			<legend>입력사항</legend>
+			<table>
+				<tr>
+					<td>이름</td>
+					<td><input type="text" size="35" name="username" placeholder="이름" required></td>
+				</tr>
+				<tr>
+					<td>아이디</td>
+					<td><input type="text" size="35" name="userid" id="uid" placeholder="아이디" required>
+						<input type="button" value="중복검사" onclick="checkid();" />
+					</td>
+				</tr>
+				<tr>
+					<td>비밀번호</td>
+					<td><input type="password" size="35" name="userpw" placeholder="비밀번호" required></td>
+				</tr>
+				<tr>
+					<td>비밀번호 확인</td>
+					<td><input type="password" size="35" name="userpwc" placeholder="비밀번호 확인" required></td>
+				</tr>
+				<tr>
+					<td>학번</td>
+					<td><input type="text" size="35" name="code" placeholder="학번이 없다면 9999를 입력해주세요." required></td>
+				</tr>
+				<tr>
+					<td>폰번호</td>
+					<td><input type="text" size="35" name="userphone" placeholder="'-'을 제외하고 입력해주세요." required></td>
+				</tr>
+				<tr>
+					<td>이메일</td>
+					<td><input type="text" name="email" required>@
+						<select name="emadress">
+							<option value="pcu.ac.kr">pcu.ac.kr</option>
+							<option value="naver.com">naver.com</option>
+							<option value="nate.com">nate.com</option>
+							<option value="hanmail.com">hanmail.com</option>
+							<option value="google.com">google.com</option>
+						</select></td>
+				</tr>
+			</table>
+			<input type="submit" value="가입하기" />
+			<input type="reset" value="다시쓰기" />
+		</fieldset>
+	</form>
+	<form action="login.php">
+		<input type="submit" value="홈으로" />
+	</form>
+</body>
+
+</html>

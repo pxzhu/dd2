@@ -1,0 +1,12 @@
+CREATE TABLE users(
+	seq int auto_increment,
+	name varchar(4) not null,
+	id varchar(18),
+	pw varchar(100) not null,
+	code varchar(7) not null,
+	email varchar(100) not null,
+	phoneN varchar(11) not null,
+	primary key(seq, id)
+);
+
+DROP TABLE users;
