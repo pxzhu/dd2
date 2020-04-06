@@ -19,7 +19,7 @@
             <input type="text" name="userid" class="inph">
           </td>
           <td rowspan="2" align="center" width="100">
-            <button type="submit" id="btn">로그인</button>
+            <button type="submit" id= "btn">로그인</button>
           </td>
         </tr>
         <tr>
