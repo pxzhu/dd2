@@ -10,3 +10,18 @@ CREATE TABLE users(
 );
 
 DROP TABLE users;
+
+CREATE TABLE noticeBoard(
+	idx int auto_increment,
+	name varchar(4) not null,
+	id varchar(18) not null,
+	title varchar(100) not null,
+	content text not null,
+	date TIMESTAMP DEFAULT NOW(),
+	hit int not null,
+	primary key(idx)
+);
+
+DROP TABLE noticeBoard;
+
+INSERT INTO noticeBoard(name, id, title, content, date, hit) VALUES('어드민', 'admin', '제목', '내용',default, 0);
