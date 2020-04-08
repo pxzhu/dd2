@@ -46,7 +46,8 @@ if (isset($_SESSION['userid'])) {
   <a href="logout.php"><input id="button" type="button" value="로그아웃" /></a>
   <a href="mypage.php"><input id="button" type="button" value="내 정보 변경" /></a>
 <?php
-} else {
-        echo "<script>alert('잘못된 접근입니다.'); history.back();</script>";
-    } ?>
+} else { ?>
+  <a href="captchaCheck.php">회원가입 &nbsp; / &nbsp; </a>
+  <a href="login.php">&nbsp;로그인하기</a>
+<?php } ?>
 </body>

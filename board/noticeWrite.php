@@ -1,3 +1,8 @@
+<?php
+include "dbConn.php";
+session_start();
+$id = $_SESSION['userid'];
+?>
 <!doctype html>
 
 <head>
@@ -8,6 +13,8 @@
 </head>
 
 <body>
+  <?php
+  if(isset($id)){ ?>
   <!--메뉴바 부분-->
   <div class="menubar">
     <ul>
@@ -55,5 +62,12 @@
     </div>
   </div>
 </body>
+<?php } else{ ?>
+  <script type="text/javascript">
+    alert("글쓰기 권한이 없습니다.");
+    history.back();
+  </script>
+<?php } ?>
+
 
 </html>
