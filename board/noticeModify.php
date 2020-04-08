@@ -4,9 +4,15 @@
   session_start();
 
   $bno = $_GET['idx'];
-  $sql = "SELECT * FROM noticeBoard WHERE idx = '$bno';";
-  $query = mysqli_query($dbConn, $sql);
-  $board = mysqli_fetch_array($query);
+  $id = $_SESSION['userid'];
+  $sql1 = "SELECT * FROM noticeBoard WHERE idx = '$bno';";
+  $query1 = mysqli_query($dbConn, $sql1);
+  $row = mysqli_fetch_array($query1);
+
+  if($id == $row["id"]){
+    $sql = "SELECT * FROM noticeBoard WHERE idx = '$bno';";
+    $query = mysqli_query($dbConn, $sql);
+    $board = mysqli_fetch_array($query);
 ?>
 <!doctype html>
 <!-- 등급 미달시 접근 금지-->
@@ -67,6 +73,13 @@
       </div>
     </div>
   </div>
+<?php
+  }else{  ?>
+    <script type="text/javascript">
+      alert("수정 권한이 없습니다.");
+      history.back();
+    </script>
+  <?php } ?>
 </body>
 
 </html>
