@@ -13,10 +13,38 @@
 <head>
   <meta charset="UTF-8">
   <title>게시판</title>
-  <link rel="stylesheet" href="/css/read.css" />
+  <link rel="stylesheet" type="text/css" href="/css/write.css" />
+  <link rel="stylesheet" type="text/css" href="/css/menubar.css" />
 </head>
 
 <body>
+  <!--메뉴바 부분-->
+  <div class="menubar">
+    <ul>
+       <li><a href="main.php">홈으로</a></li>
+       <li><a href="#" id="current">게시판</a>
+          <ul>
+            <li><a href="noticeBoard.php">공지사항</a></li>
+            <li><a href="#">질문게시판</a></li>
+            <li><a href="#">선후배게시판</a></li>
+          </ul>
+       </li>
+       <li><a href="#" id="current">학과행사</a>
+         <ul>
+           <li><a href="#">활동사진</a></li>
+           <li><a href="#">일정</a></li>
+         </ul>
+       </li>
+       <li><a href="#" id="current">학교 홈페이지</a>
+         <ul>
+           <li><a href="http://pcu.ac.kr">배재대학교</a></li>
+           <li><a href="http://course.pcu.ac.kr">LMS</a></li>
+           <li><a href="http://tis.pcu.ac.kr">통합정보시스템</a></li>
+         </ul>
+       </li>
+    </ul>
+  </div>
+  <!--여기까지 메뉴바 부분-->
   <div id="board_write">
     <h1><a href="/noticeBoard.php">자유게시판</a></h1>
     <h4>글을 수정합니다.</h4>
