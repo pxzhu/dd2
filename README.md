@@ -19,6 +19,13 @@
 >메인화면 ( > 드롭다운 메뉴 )    
 >공지사항 게시판 ( > 게시글 작성, 목록, DB 추가 )    
 
+- 2020-04-09
+
+>메인화면 ( > 드롭다운 메뉴 수정, 학교 링크 추가 )    
+>게시글 ( > 새로운 게시글에 new 아이콘 활성, 페이지 표시, 읽기, 수정, 삭제 )    
+
+
+
 
 
 ##### 참고 사이트 
@@ -28,4 +35,5 @@
 [zzaps 티스토리](https://zzaps.tistory.com/30)    
 [WEBDIR 티스토리](https://webdir.tistory.com/31)    
 [re-fresh-studio](http://re-fresh-studio.com/2013/07/post-12-dropmenu_with_css.php)
+[DevNote](http://ttorr.blogspot.com/2013/08/php-date.html)
 
