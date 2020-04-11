@@ -1,6 +1,7 @@
 <?php
     include "dbConn.php";
         session_start();
+        $id = $_SESSION['userid'];
 ?>
 <!doctype html>
 
@@ -12,8 +13,8 @@
   <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/js/jquery-ui.js"></script>
 
-  <script>
-    $(function() {
+  <script type="text/javascript">
+    /*$(function() {
       $("#dialog").dialog({
         autoOpen: false,
         modal: true,
@@ -24,7 +25,19 @@
       $("#dialogBtn").on("click", function() {
         $("#dialog").dialog("open");
       });
+    });*/
+    $(document).ready(function(){
+      $("#dialogBtn").click(function(){
+        var obj = $(this).closest(".dap_lo").find("#dialogSc");
+        obj.dialog({
+          modal:true,
+          width:650,
+          hieght:200,
+          title:"댓글 수정"
+        });
+      });
     });
+
   </script>
 </head>
 
@@ -89,6 +102,7 @@
       </ul>
     </div>
   </div>
+  <?php if(isset($id)){?>
   <!-- 댓글 입력 창 -->
   <div class="dap_ins">
     <form method="post" class="reply_form" action="replyOk.php">
@@ -99,6 +113,7 @@
       </div>
     </form>
   </div>
+<?php } ?>
   <!-- 댓글 불러오기 -->
   <?php
   $rsql = "SELECT * FROM reply WHERE con_num = '$bno' ORDER BY idx desc";
@@ -110,7 +125,6 @@
     <div class="dap_to"><?php echo nl2br($reply['content']); ?></div>
     <div class="rep_me dap_to"><?php echo $reply['date']; ?></div>
     <?php
-      $id = $_SESSION['userid'];
         $replyUserId = $reply['id'];
         if ($id == $replyUserId) {
             ?>
@@ -122,8 +136,11 @@
       <input type="hidden" name="date" value="<?php echo $reply['date']; ?>">
       <button type="submit">삭제</button>
     </form>
+
+    <?php
+        } ?>
     <!-- 댓글 수정 폼 dialog -->
-    <div id="dialog">
+    <div id="dialogSc">
       <form method="post" action="replyModifyOk.php">
         <input type="hidden" name="idx" value="<?php echo $reply['idx']; ?>" />
         <input type="hidden" name="bno" value="<?php echo $bno; ?>">
@@ -131,8 +148,6 @@
         <input type="submit" value="수정하기" class="re_mo_bt">
       </form>
     </div>
-    <?php
-        } ?>
   </div>
   <?php
     } ?>

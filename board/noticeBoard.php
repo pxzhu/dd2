@@ -1,6 +1,8 @@
 <?php
 include  "dbConn.php";
-session_start(); ?>
+session_start();
+$id = $_SESSION['userid'];
+?>
 
 <!doctype html>
 
@@ -84,7 +86,13 @@ session_start(); ?>
             if (strlen($title)>30) {
                 //title이 30을 넘어서면 ...표시
                 $title = str_replace($board["title"], mb_substr($board["title"], 0, 30, "utf-8")."...", $board["title"]);
-            } ?>
+            }
+            $rcidx = $board['idx'];
+            $rcsql = "SELECT * FROM reply WHERE con_num='$rcidx';";
+            $rcquery = mysqli_query($dbConn, $rcsql);
+            $rcrow = mysqli_num_rows($rcquery);
+
+            ?>
       <tbody>
         <?php
           $boardtime = $board['date'];
@@ -98,7 +106,7 @@ session_start(); ?>
         ?>
         <tr>
           <td width="70"><?php echo $board['idx']; ?></td>
-          <td width="500"><a href="/noticeRead.php?idx=<?php echo $board['idx']; ?>"><?php echo $title; ?> <?php echo $img; ?></a></td>
+          <td width="500"><a href="/noticeRead.php?idx=<?php echo $board['idx']; ?>"><?php echo $title; ?><span id="rcst">[<?php echo $rcrow; ?>]</span> <?php echo $img; ?></a></td>
           <td width="120"><?php echo $board['name']; ?></td>
           <td width="100"><?php echo $board['date']; ?> </td>
           <td width="100"><?php echo $board['hit']; ?></td>
@@ -141,9 +149,11 @@ session_start(); ?>
         ?>
       </ul>
     </div>
+    <?php if(isset($id)){?>
     <div id="write_btn">
       <a href="noticeWrite.php"><button>글쓰기</button></a>
     </div>
+  <?php } ?>
   </div>
 </body>
 

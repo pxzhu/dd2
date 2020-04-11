@@ -7,10 +7,14 @@ $userid = $_SESSION['userid'];
 $title = $_POST['title'];
 $content = $_POST['content'];
 
+$tnum = "ALTER TABLE noticeBoard auto_increment = 1;";
+$tquery = mysqli_query($dbConn, $tnum);
 
 $sql = "INSERT INTO noticeBoard(name, id, title, content, date, hit)
 VALUES('$username', '$userid', '$title', '$content', default, 0);";
-$query = mysqli_query($dbConn, $sql); ?>
+$query = mysqli_query($dbConn, $sql);
+
+?>
 
 <script type="text/javascript">
   alert("글쓰기 완료되었습니다.");
