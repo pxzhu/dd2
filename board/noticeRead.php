@@ -90,6 +90,9 @@
       <?php echo $barray['name']; ?> <?php echo $barray['date']; ?> 조회:<?php echo $barray['hit']; ?>
       <div id="bo_line"></div>
     </div>
+    <div>
+      파일 : <a href="/file/<?php echo $barray['file'];?>" download><?php echo $barray['file']; ?></a>
+    </div>
     <div id="bo_content">
       <?php echo nl2br($barray['content']); ?>
     </div>

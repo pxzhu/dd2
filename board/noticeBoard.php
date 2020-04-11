@@ -96,8 +96,8 @@ $id = $_SESSION['userid'];
       <tbody>
         <?php
           $boardtime = $board['date'];
-          $timeformat = date("Y-m-d", strtotime($boardtime));
-          $timenow = date("Y-m-d");
+          $timeformat = date("Y-m-d ", strtotime($boardtime));
+          $timenow = date("Y-m-d ");
           if($timenow == $timeformat){
             $img = "<img src = '/img/new.png' alt = 'new' title = 'new' />";
           }else{
@@ -153,7 +153,20 @@ $id = $_SESSION['userid'];
     <div id="write_btn">
       <a href="noticeWrite.php"><button>글쓰기</button></a>
     </div>
-  <?php } ?>
+    <?php } ?>
+    <br />
+    <!-- 검색 기능 -->
+    <div id="search_box">
+      <form action="noticeSearch.php" method="get">
+        <select name="category">
+          <option value="title">제목</option>
+          <option value="name">글쓴이</option>
+          <option value="content">내용</option>
+        </select>
+        <input type="text" name="search" size="40" required />
+        <button>검색</button>
+      </form>
+    </div>
   </div>
 </body>
 
