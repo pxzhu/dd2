@@ -35,7 +35,7 @@
 
 - 2020-04-11
 
->게시판 ( > 게시판 번호 자동 초기화, 댓글 갯수 표시, 검색 기능 추가 )    
+>게시판 ( > 게시판 번호 자동 초기화: 기능 삭제, 댓글 갯수 표시, 검색 기능 추가, 파일 업로드 기능 추가: 1개 파일 jpg/jpeg/png 한정 )    
 >로그인 ( > 로그인 안 할시 글, 댓글 작성 불가 )    
 
 
@@ -48,4 +48,5 @@
 [WEBDIR 티스토리](https://webdir.tistory.com/31)    
 [re-fresh-studio](http://re-fresh-studio.com/2013/07/post-12-dropmenu_with_css.php)    
 [DevNote](http://ttorr.blogspot.com/2013/08/php-date.html)    
+[제타위키](https://zetawiki.com/wiki/PHP_%ED%8C%8C%EC%9D%BC_%EC%97%85%EB%A1%9C%EB%93%9C_%EA%B5%AC%ED%98%84)    
 
