@@ -64,6 +64,12 @@
         <div id="in_content">
           <textarea name="content" id="ucontent" placeholder="내용" required><?php echo $board['content']; ?></textarea>
         </div>
+        <div id="in_lock">
+          <input type="checkbox" value="1" name="lockpost" />비밀글 (작성자와 관리자만 확인 가능합니다)
+        </div>
+        <div id="in_file">
+          <input type="file" value="1" name="file" />
+        </div>
         <div class="bt_se">
           <button type="submit">수정하기</button>
         </div>
