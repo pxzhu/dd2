@@ -7,6 +7,13 @@ $userid = $_SESSION['userid'];
 $title = $_POST['title'];
 $content = $_POST['content'];
 
+if(isset($_POST['lockpost'])){
+  $lockp = 1;
+}else{
+  $lockp = 0;
+}
+
+
 $fileDir = './file';
 $allowedExt = array('jpg','jpeg','png');
 
@@ -27,12 +34,12 @@ if ($oname != null) {
     }
 
     move_uploaded_file($_FILES['file']['tmp_name'], "$fileDir/$oname");
-    $sql = "INSERT INTO noticeBoard(name, id, title, content, date, hit, file)
-          VALUES('$username', '$userid', '$title', '$content', default, 0, '$oname');";
+    $sql = "INSERT INTO noticeBoard(name, id, title, content, date, hit, lockb, file)
+          VALUES('$username', '$userid', '$title', '$content', default, 0, '$lockp', '$oname');";
     $query = mysqli_query($dbConn, $sql);
 }else{
-$sql = "INSERT INTO noticeBoard(name, id, title, content, date, hit, file)
-      VALUES('$username', '$userid', '$title', '$content', default, 0, '$oname');";
+$sql = "INSERT INTO noticeBoard(name, id, title, content, date, hit, lockb, file)
+      VALUES('$username', '$userid', '$title', '$content', default, 0, '$lockp', '$oname');";
 $query = mysqli_query($dbConn, $sql);
 }
 ?>

@@ -41,7 +41,7 @@ $id = $_SESSION['userid'];
        </li>
     </ul>
   </div>
-  <!--여기까지 메뉴바 부분-->
+  <!--메뉴바 부분 끝-->
   <div id="board_write">
     <h1><a href="noticeBoard.php">공지사항</a></h1>
     <!-- 등급 미달시 접근 금지-->
@@ -54,6 +54,9 @@ $id = $_SESSION['userid'];
         <div class="wi_line"></div>
         <div id="in_content">
           <textarea name="content" id="ucontent" placeholder="내용" required></textarea>
+        </div>
+        <div id="in_lock">
+          <input type="checkbox" value="1" name="lockpost" />비밀글 (작성자와 관리자만 확인 가능합니다)
         </div>
         <div id="in_file">
           <input type="file" value="1" name="file" />

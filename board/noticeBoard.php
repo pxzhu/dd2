@@ -106,7 +106,13 @@ $id = $_SESSION['userid'];
         ?>
         <tr>
           <td width="70"><?php echo $board['idx']; ?></td>
-          <td width="500"><a href="/noticeRead.php?idx=<?php echo $board['idx']; ?>"><?php echo $title; ?><span id="rcst">[<?php echo $rcrow; ?>]</span> <?php echo $img; ?></a></td>
+          <td width="500">
+            <?php
+            $lockimg = "<img src='/img/lock.png' alt='lock' title='lock' width='20' height='20' />";
+            if($board['lockb'] == "1"){?>
+              <a href="/noticeRead.php?idx=<?php echo $board['idx']; ?>"><?php echo $title; ?><span id="rcst">[<?php echo $rcrow; ?>]</span> <?php echo $img."".$lockimg; ?></a></td>
+            <?php }else { ?>
+            <a href="/noticeRead.php?idx=<?php echo $board['idx']; ?>"><?php echo $title; ?><span id="rcst">[<?php echo $rcrow; ?>]</span> <?php echo $img; } ?></a></td>
           <td width="120"><?php echo $board['name']; ?></td>
           <td width="100"><?php echo $board['date']; ?> </td>
           <td width="100"><?php echo $board['hit']; ?></td>
