@@ -41,24 +41,23 @@
     </ul>
   </div>
   <!--메뉴바 부분 끝-->
-  <?php //게시글 클릭 시 조회수 + 1 증가, DB 저장, 글 불러오기 DB 작업
+  <?php //게시글 클릭 시 조회수 + 1 증가, DB 저장, 글 불러오기 DB 작업, 비밀글 접근 권한
     $bno = $_GET['idx']; /* bno함수에 idx값을 받아와 넣음*/
     $query = "SELECT * FROM noticeBoard WHERE idx = '$bno'";
     $row = mysqli_query($dbConn, $query);
     $array = mysqli_fetch_array($row);
     $hit = $array['hit'] + 1;
 
-    $uquery = "UPDATE noticeBoard SET hit = '$hit' WHERE idx = '$bno'";
-    $urow = mysqli_query($dbConn, $uquery);
-
     $bquery = "SELECT * FROM noticeBoard WHERE idx = '$bno'";
     $brow = mysqli_query($dbConn, $bquery);
     $barray = mysqli_fetch_array($brow);
-  ?>
-  <?php
+
     if($barray['lockb'] == 1 && $id != $barray['id']){
       echo "<script>alert('비밀글 접근 권한이 없습니다.'); history.back();</script>";
     }else{
+
+    $uquery = "UPDATE noticeBoard SET hit = '$hit' WHERE idx = '$bno'";
+    $urow = mysqli_query($dbConn, $uquery);
   ?>
   <!-- 글 불러오기 -->
   <div id="board_read">
