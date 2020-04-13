@@ -46,7 +46,9 @@
 >게시글 수정 ( > 수정 시 체크 박스, 파일 업로드 및 재 업로드 )    
 >쿼리 수정 ( > 수정 시 lockb와 file도 함께 수정되게 함 )    
 
+- 2020-04-13
 
+>회원가입 ( > 회원가입 시 정규 표현식 유효성 검사, 비밀번호 특수문자 사용 )    
 
 
 
@@ -59,4 +61,8 @@
 [re-fresh-studio](http://re-fresh-studio.com/2013/07/post-12-dropmenu_with_css.php)    
 [DevNote](http://ttorr.blogspot.com/2013/08/php-date.html)    
 [제타위키](https://zetawiki.com/wiki/PHP_%ED%8C%8C%EC%9D%BC_%EC%97%85%EB%A1%9C%EB%93%9C_%EA%B5%AC%ED%98%84)    
+[두루루루루 티스토리](https://estar.tistory.com/76)    
+[개발하는개발자 티스토리](https://olsh1108o.tistory.com/entry/JS-%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85-%EC%9C%A0%ED%9A%A8%EC%84%B1-%EA%B2%80%EC%82%AC)    
+
+
 
