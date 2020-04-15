@@ -50,6 +50,14 @@
 
 >회원가입 ( > 회원가입 시 정규 표현식 유효성 검사, 비밀번호 특수문자 사용 )    
 
+- 2020-04-13
+
+>글쓰기 ( > 비밀글 삭제 예정 )    
+>댓글 ( > 수정 버튼 삭제 , 비밀 댓글 추가 예정 )    
+>메인페이지 ( > 활동사진이 들어갈 슬라이드 추가 )    
+>회의 결과 ( > 전체적인 스타일 및 색상 변경, 난잡한 부분 삭제 예정 )    
+>색상 ( > #9DC8C8, #58C9B9, #519D9E, #D1B6E1 베이스 )    
+
 
 
 ##### 참고 사이트 
@@ -63,6 +71,6 @@
 [제타위키](https://zetawiki.com/wiki/PHP_%ED%8C%8C%EC%9D%BC_%EC%97%85%EB%A1%9C%EB%93%9C_%EA%B5%AC%ED%98%84)    
 [두루루루루 티스토리](https://estar.tistory.com/76)    
 [개발하는개발자 티스토리](https://olsh1108o.tistory.com/entry/JS-%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85-%EC%9C%A0%ED%9A%A8%EC%84%B1-%EA%B2%80%EC%82%AC)    
-
+[개발자 황준일](http://junil-hwang.com/blog/javascript-slide-animation/)    
 
 
