@@ -9,7 +9,9 @@ session_start();
   <meta charset="utf-8" />
   <title>메인페이지</title>
   <link rel="stylesheet" type="text/css" href="/css/menubar.css" />
+  <link rel="stylesheet" type="text/css" href="/css/slide.css" />
 </head>
+<script type="text/javascript" src="/js/slide.js"></script>
 
 <body>
   <!--메뉴바 부분-->
@@ -50,4 +52,13 @@ if (isset($_SESSION['userid'])) {
   <a href="captchaCheck.php">회원가입 &nbsp; / &nbsp; </a>
   <a href="login.php">&nbsp;로그인하기</a>
 <?php } ?>
+<!--슬라이드 부분(href이용가능할듯)-->
+  <div class="slide">
+    <ul>
+      <li><a href='#'><img src="/img/활동1.png"></a></li>
+      <li><a href='#'><img src="/img/활동2.png"></a></li>
+      <li><a href='#'><img src="/img/활동3.png"></a></li>
+      <li><a href='#'><img src="/img/활동4.png"></a></li>
+    </ul>
+  </div>
 </body>
