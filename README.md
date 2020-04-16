@@ -58,6 +58,12 @@
 >회의 결과 ( > 전체적인 스타일 및 색상 변경, 난잡한 부분 삭제 예정 )    
 >색상 ( > #9DC8C8, #58C9B9, #519D9E, #D1B6E1 베이스 )    
 
+- 2020-04-13
+
+>기능 삭제 ( > 비밀 글, 댓글 수정 )    
+>코드 ( > dbConn.php: function을 추가하여 전체적인 코드 길이 간편화 )    
+>중복검사 ( > 아이디 사용 가능일 때 skyblue로 변경 )    
+>function 수정으로 인한 수정 ( > loginCheck.php, memberCheck.php, memberFindId.php, memberFindPw.php, memberPwUpdateOk.php, memberUpdate.php, myPage.php, noticeBoard.php, noticeDelete.php, noticeModify.php, noticeModifyOk.php, noticeOk.php, noticeRead.php, noticeSearch.php, noticeWrite.php, replyDelete.php, replyOk.php )    
 
 
 ##### 참고 사이트 
