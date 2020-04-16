@@ -1,14 +1,13 @@
-<?php
-include "dbConn.php";
+<?php include "dbConn.php";
 
 $uid = $_GET['userid'];
 
-$sql = "SELECT id FROM users WHERE id='$uid'";
-$query = mysqli_query($dbConn, $sql);
-$row = mysqli_num_rows($query);
+$sql = mq("SELECT id FROM users WHERE id='$uid';");
+$row = mysqli_num_rows($sql);
+
 if ($row==0) {
     ?>
-<div style='font-family:"malgun gothic"' ;><?php echo $uid; ?>는 사용가능한 아이디입니다.</div>
+<div style='font-family:"malgun gothic"; color:skyblue;'><?php echo $uid; ?>는 사용가능한 아이디입니다.</div>
 <?php
 } else {
         ?>

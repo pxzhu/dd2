@@ -1,6 +1,4 @@
-<?php
-  include "dbConn.php";
-  session_start();
+<?php include "dbConn.php";
 
   $bno = $_POST['idx'];
   $title = $_POST['title'];
@@ -32,15 +30,11 @@
 
       move_uploaded_file($_FILES['file']['tmp_name'], "$fileDir/$oname");
 
-  $sql = "UPDATE noticeBoard SET title = '$title', content='$content', lockb='$lockp', file='$oname' WHERE idx='$bno';";
-  $query = mysqli_query($dbConn, $sql);
+  $sql = mq("UPDATE noticeBoard SET title = '$title', content='$content', file='$oname' WHERE idx='$bno';");
 }else{
-  $sql = "UPDATE noticeBoard SET title = '$title', content='$content', lockb='$lockp', file='$oname' WHERE idx='$bno';";
-  $query = mysqli_query($dbConn, $sql);
+  $sql = mq("UPDATE noticeBoard SET title = '$title', content='$content', file='$oname' WHERE idx='$bno';");
 }
-
-  ?>
-
+?>
 <script type="text/javascript">
   alert("수정되었습니다.");
 </script>

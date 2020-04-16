@@ -1,7 +1,5 @@
 <meta charset="utf-8" />
-<?php
-include "dbConn.php";
-session_start();
+<?php include "dbConn.php";
 
 //POST로 받아온 아이다와 비밀번호가 비었다면 알림창을 띄우고 전 페이지로 돌아갑니다.
 if ($_POST['userid'] == "" || $_POST['userpw'] == "") {
@@ -12,9 +10,8 @@ if ($_POST['userid'] == "" || $_POST['userpw'] == "") {
     $id = $_POST['userid'];
     $pw = $_POST['userpw'];
 
-    $query = "SELECT id, pw FROM users WHERE id = '$id'";
-    $result = mysqli_query($dbConn, $query);
-    $row = mysqli_fetch_array($result);
+    $sql = mq("SELECT name, id, pw FROM users WHERE id = '$id';");
+    $row = mysqli_fetch_array($sql);
 
     //$hash_pw에 POST로 받아온 아이디열의 비밀번호를 저장합니다.
     $hash = $row['pw'];
@@ -23,10 +20,12 @@ if ($_POST['userid'] == "" || $_POST['userpw'] == "") {
     if (password_verify($pw, $hash)) {
         $_SESSION['userid'] = $row["id"];
         $_SESSION['userpw'] = $row["pw"];
+        $_SESSION['username'] = $row["name"];
 
         echo "<script>alert('로그인되었습니다.'); location.href='main.php';</script>";
         exit();
     } else { // 비밀번호가 같지 않다면 알림창을 띄우고 전 페이지로 돌아갑니다
         echo "<script>alert('아이디 혹은 비밀번호를 확인하세요.'); history.back();</script>";
     }
-} ?>
+}
+?>

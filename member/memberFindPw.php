@@ -10,9 +10,8 @@ if ($_POST["id"] == "" || $_POST["name"] == "" || $_POST["code"] == "" || $_POST
     $userphone = $_POST['phone'];
     $email = $_POST['email'].'@'.$_POST['emadress'];
 
-    $sql = "SELECT id, name, code, phoneN, email FROM users WHERE id = '$userid' AND name = '$username' AND code = '$usercode' AND phoneN = '$userphone' AND email = '$email'";
-    $query = mysqli_query($dbConn, $sql);
-    $result = mysqli_fetch_array($query);
+    $sql = mq("SELECT id, name, code, phoneN, email FROM users WHERE id = '$userid' AND name = '$username' AND code = '$usercode' AND phoneN = '$userphone' AND email = '$email';");
+    $result = mysqli_fetch_array($sql);
 
     if ($result["id"] == $userid && $result["name"] == $username && $result["code"] == $usercode && $result["phoneN"] == $userphone && $result["email"] == $email) {
         session_start();

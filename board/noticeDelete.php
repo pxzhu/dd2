@@ -1,15 +1,11 @@
-<?php
-  include "dbConn.php";
-  session_start();
+<?php include "dbConn.php";
 
   $bno = $_GET['idx'];
   $id = $_SESSION['userid'];
-  $sql = "SELECT * FROM noticeBoard WHERE idx = '$bno';";
-  $query = mysqli_query($dbConn, $sql);
-  $row = mysqli_fetch_array($query);
+  $sql = mq("SELECT * FROM noticeBoard WHERE idx = '$bno';");
+  $row = mysqli_fetch_array($sql);
   if($id == $row["id"]){
-  $dsql = "DELETE FROM noticeBoard WHERE idx = '$bno';";
-  $dquery = mysqli_query($dbConn, $dsql);
+  $dsql = mq("DELETE FROM noticeBoard WHERE idx = '$bno';");
 ?>
 <!-- 등급 미달시 접근 금지-->
 <script type="text/javascript">

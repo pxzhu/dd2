@@ -1,18 +1,11 @@
-<?php
-  include "dbConn.php";
-  session_start();
-  $con_num = $_POST['bno'];
-  $id=$_SESSION['userid'];
-  $content = $_POST['content'];
-  $date=$_POST['date'];
+<?php include "dbConn.php";
 
-  $sql = "DELETE FROM reply
-          WHERE id='$id'
-          AND con_num = '$con_num'
-          AND content = '$content'
-          AND date = '$date';";
-  $query = mysqli_query($dbConn, $sql);
+$con_num = $_POST['bno'];
+$id=$_SESSION['userid'];
+$content = $_POST['content'];
+$date=$_POST['date'];
 
+$sql = mq("DELETE FROM reply WHERE id='$id' AND con_num = '$con_num' AND content = '$content' AND date = '$date';");
 ?>
 
 <script type="text/javascript">

@@ -1,6 +1,4 @@
-<?php
-include  "dbConn.php";
-session_start();
+<?php include  "dbConn.php";
 $id = $_SESSION['userid'];
 ?>
 <!doctype html>
@@ -41,13 +39,11 @@ $id = $_SESSION['userid'];
   </div>
   <!--여기까지 메뉴바 부분-->
   <div id="board_area">
-    <!-- 18.10.11 검색 추가 -->
-    <?php
-
-  /* 검색 변수 */
+    <!--검색 추가-->
+  <?php
   $category = $_GET['category'];
   $search = $_GET['search'];
-?>
+  ?>
     <h1><?php echo $category; ?>에서 '<?php echo $search; ?>'검색결과</h1>
     <h4 style="margin-top:30px;"><a href="/">홈으로</a></h4>
     <table class="list-table">
@@ -63,44 +59,40 @@ $id = $_SESSION['userid'];
 
       <?php
       $searchch = "'%$search%'";
-      $sql = "SELECT * FROM noticeBoard WHERE $category like $searchch ORDER BY idx desc;";
+      $sql = mq("SELECT * FROM noticeBoard WHERE $category like $searchch ORDER BY idx desc;");
        // board테이블에있는 idx를 기준으로 내림차순해서 5개까지 표시
-      $query = mysqli_query($dbConn, $sql);
-          while ($board=mysqli_fetch_array($query)) {
-              $title=$board["title"];
-              if (strlen($title)>30) {
-                  $title=str_replace($board["title"], mb_substr($board["title"], 0, 30, "utf-8")."...", $board["title"]);
-              }
-              $rcidx = $board['idx'];
-              $rcsql = "SELECT * FROM reply WHERE con_num='$rcidx';";
-              $rcquery = mysqli_query($dbConn, $rcsql);
-              $rcrow = mysqli_num_rows($rcquery);
-               ?>
+      while ($board=mysqli_fetch_array($sql)) {
+        $title=$board["title"];
+        if (strlen($title)>30) {
+          $title=str_replace($board["title"], mb_substr($board["title"], 0, 30, "utf-8")."...", $board["title"]);
+        }
+        $rcidx = $board['idx'];
+        $rcsql = mq("SELECT * FROM reply WHERE con_num='$rcidx';");
+        $rcrow = mysqli_num_rows($rcsql);
+       ?>
 
       <tbody>
         <tr>
           <td width="70"><?php echo $board['idx']; ?></td>
           <td width="500">
-              <?php
-              $boardtime = $board['date'];
-              $timeformat = date("Y-m-d ", strtotime($boardtime));
-              $timenow = date("Y-m-d ");
-              if($timenow == $timeformat){
-                $img = "<img src = '/img/new.png' alt = 'new' title = 'new' />";
-              }else{
-                $img = "";
-              }
-          ?>
-              <a href='noticeRead.php?idx=<?php echo $board["idx"]; ?>'><span style="background:yellow;"><?php echo $title; ?></span><span class="re_ct">[<?php echo $rcrow; ?>]</span> <?php echo $img; ?></a></td>
-              <td width="120"><?php echo $board['name']; ?></td>
-              <td width="100"><?php echo $board['date']; ?> </td>
-              <td width="100"><?php echo $board['hit']; ?></td>
-
+            <?php
+            $boardtime = $board['date'];
+            $timeformat = date("Y-m-d ", strtotime($boardtime));
+            $timenow = date("Y-m-d ");
+            if($timenow == $timeformat){
+              $img = "<img src = '/img/new.png' alt = 'new' title = 'new' />";
+            }else{
+              $img = "";
+            }
+            ?>
+            <a href='noticeRead.php?idx=<?php echo $board["idx"]; ?>'><span style="background:yellow;"><?php echo $title; ?></span><span class="re_ct">[<?php echo $rcrow; ?>]</span> <?php echo $img; ?></a></td>
+            <td width="120"><?php echo $board['name']; ?></td>
+            <td width="100"><?php echo $board['date']; ?> </td>
+            <td width="100"><?php echo $board['hit']; ?></td>
         </tr>
       </tbody>
 
-      <?php
-          } ?>
+      <?php } ?>
     </table>
     <?php if(isset($id)){?>
     <div id="write_btn">

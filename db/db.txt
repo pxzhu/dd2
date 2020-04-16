@@ -20,13 +20,11 @@ CREATE TABLE noticeBoard(
 	content text not null,
 	date TIMESTAMP DEFAULT NOW(),
 	hit int not null,
-	lock int not null,
 	file varchar(100) not null,
 	primary key(idx)
 );
 
-INSERT INTO noticeBoard(name, id, title, content, date, hit, lockb, file)
-VALUES('어드민', 'admin', '제목', '내용', default, 0 , 0 , '');
+INSERT INTO noticeBoard(name, id, title, content, date, hit, file) VALUES('어드민', 'admin', '제목', '내용', default, 0 , '');
 
 DROP TABLE noticeBoard;
 
@@ -42,3 +40,5 @@ CREATE TABLE reply (
 
 INSERT INTO reply(con_num, name, id, content, date)
 VALUES('25', '어드민', 'admin', '테스트1232', default);
+
+DROP TABLE reply;

@@ -1,7 +1,5 @@
-<?php
-    include "dbConn.php";
-        session_start();
-        $id = $_SESSION['userid'];
+<?php include "dbConn.php";
+$id = $_SESSION['userid'];
 ?>
 <!doctype html>
 <head>
@@ -43,21 +41,12 @@
   <!--메뉴바 부분 끝-->
   <?php //게시글 클릭 시 조회수 + 1 증가, DB 저장, 글 불러오기 DB 작업, 비밀글 접근 권한
     $bno = $_GET['idx']; /* bno함수에 idx값을 받아와 넣음*/
-    $query = "SELECT * FROM noticeBoard WHERE idx = '$bno'";
-    $row = mysqli_query($dbConn, $query);
-    $array = mysqli_fetch_array($row);
+    $sql = mq("SELECT * FROM noticeBoard WHERE idx = '$bno';");
+    $array = mysqli_fetch_array($sql);
     $hit = $array['hit'] + 1;
 
-    $bquery = "SELECT * FROM noticeBoard WHERE idx = '$bno'";
-    $brow = mysqli_query($dbConn, $bquery);
-    $barray = mysqli_fetch_array($brow);
-
-    if($barray['lockb'] == 1 && $id != $barray['id']){
-      echo "<script>alert('비밀글 접근 권한이 없습니다.'); history.back();</script>";
-    }else{
-
-    $uquery = "UPDATE noticeBoard SET hit = '$hit' WHERE idx = '$bno'";
-    $urow = mysqli_query($dbConn, $uquery);
+    $bsql = mq("SELECT * FROM noticeBoard WHERE idx = '$bno';");
+    $barray = mysqli_fetch_array($bsql);
   ?>
   <!-- 글 불러오기 -->
   <div id="board_read">
@@ -101,9 +90,8 @@
   <!-- 댓글 입력 창 끝-->
   <?php } ?>
   <?php //댓글 불러오기 DB 작업
-    $rsql = "SELECT * FROM reply WHERE con_num = '$bno' ORDER BY idx desc";
-    $rquery = mysqli_query($dbConn, $rsql);
-    while ($reply = mysqli_fetch_array($rquery)) {
+    $rsql = mq("SELECT * FROM reply WHERE con_num = '$bno' ORDER BY idx desc;");
+    while ($reply = mysqli_fetch_array($rsql)) {
   ?>
   <!-- 댓글 불러오기 -->
   <div class="dap_lo">
@@ -122,23 +110,9 @@
       <button type="submit">삭제</button>
     </form>
     <!-- 댓글 삭제 끝-->
-    <button id=dialogBtn>수정</button>
     <?php } ?>
-    <?php
-      if($id==$replyUserId){ ?>
-    <!-- 댓글 수정 폼 dialog -->
-    <dialog id="dialogSc">
-      <form method="post" action="replyModifyOk.php">
-        <input type="hidden" name="idx" value="<?php echo $reply['idx']; ?>" />
-        <input type="hidden" name="bno" value="<?php echo $bno; ?>">
-        <textarea name="content" class="dap_edit_t"><?php echo $reply['content']; ?></textarea>
-        <input type="submit" value="수정하기" class="re_mo_bt">
-      </form>
-    </dialog>
-    <!-- 댓글 수정 폼 dialog 끝-->
-  <?php } ?>
   </div>
   <!-- 댓글 불러오기 끝-->
-  <?php } }?>
+  <?php } ?>
 </body>
 </html>

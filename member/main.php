@@ -1,8 +1,4 @@
-<?php
-include "dbConn.php";
-
-session_start();
-?>
+<?php include "dbConn.php"; ?>
 <!DOCTYPE html>
 
 <head>

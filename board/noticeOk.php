@@ -1,7 +1,5 @@
-<?php
+<?php include "dbConn.php";
 
-include "dbConn.php";
-session_start();
 $username = $_SESSION['username'];
 $userid = $_SESSION['userid'];
 $title = $_POST['title'];
@@ -34,13 +32,9 @@ if ($oname != null) {
     }
 
     move_uploaded_file($_FILES['file']['tmp_name'], "$fileDir/$oname");
-    $sql = "INSERT INTO noticeBoard(name, id, title, content, date, hit, lockb, file)
-          VALUES('$username', '$userid', '$title', '$content', default, 0, '$lockp', '$oname');";
-    $query = mysqli_query($dbConn, $sql);
+    $sql = mq("INSERT INTO noticeBoard(name, id, title, content, date, hit, file) VALUES('$username', '$userid', '$title', '$content', default, 0, '$oname');");
 }else{
-$sql = "INSERT INTO noticeBoard(name, id, title, content, date, hit, lockb, file)
-      VALUES('$username', '$userid', '$title', '$content', default, 0, '$lockp', '$oname');";
-$query = mysqli_query($dbConn, $sql);
+$sql = mq("INSERT INTO noticeBoard(name, id, title, content, date, hit, file) VALUES('$username', '$userid', '$title', '$content', default, 0, '$oname');");
 }
 ?>
 

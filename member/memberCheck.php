@@ -9,11 +9,9 @@ $code = $_POST['code'];
 $email = $_POST['email'].'@'.$_POST['emadress'];
 $phone = $_POST['userphone'];
 
-
 $pw = password_hash($_POST['userpw'], PASSWORD_DEFAULT);
-$sql = "INSERT INTO users(name,id,pw,code,email,phoneN)
-    VALUES('$name', '$id', '$pw', '$code', '$email', '$phone');";
-$query = mysqli_query($dbConn, $sql);
+$sql = mq("INSERT INTO users(name,id,pw,code,email,phoneN)
+    VALUES('$name', '$id', '$pw', '$code', '$email', '$phone');");
 ?>
 
 <meta charset="utf-8" />

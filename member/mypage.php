@@ -1,9 +1,6 @@
-<?php
-include "dbConn.php";
-session_start();
-
+<?php include "dbConn.php";
 if (isset($_SESSION['userid'])) {
-    ?>
+?>
 <!DOCTYPE html>
 <html>
 
@@ -15,12 +12,10 @@ if (isset($_SESSION['userid'])) {
     * {
       margin: 0 auto;
     }
-
     a {
       color: #333;
       text-decoration: none;
     }
-
     .find {
       text-align: center;
       width: 500px;
@@ -59,10 +54,9 @@ if (isset($_SESSION['userid'])) {
   <!--여기까지 메뉴바 부분-->
   <div class="find">
     <form method="post" action="memberUpdate.php">
-      <?php
-$sql = "SELECT * FROM users WHERE id='{$_SESSION['userid']}'";
-    $query = mysqli_query($dbConn, $sql);
-    while ($member = mysqli_fetch_array($query)) { ?>
+<?php
+    $sql = mq("SELECT * FROM users WHERE id='{$_SESSION['userid']}';");
+    while ($member = mysqli_fetch_array($sql)) { ?>
       <h1>내 정보</h1>
       <p><a href="main.php">홈으로</a></p>
       <fieldset>
@@ -109,4 +103,5 @@ $sql = "SELECT * FROM users WHERE id='{$_SESSION['userid']}'";
 <?php
 } else {
         echo "<script>alert('잘못된 접근입니다.'); history.back();</script>";
-    } ?>
+    }
+?>

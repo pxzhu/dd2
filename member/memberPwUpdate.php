@@ -1,10 +1,9 @@
-<?php
-include "dbConn.php";
+<?php include "dbConn.php";
 
 if (isset($_SESSION['userid'])) {
     echo "<script>alert('잘못된 접근입니다.'); history.back();</script>";
 } else {
-    ?>
+?>
 <!DOCTYPE html>
 
 <head>
@@ -14,7 +13,6 @@ if (isset($_SESSION['userid'])) {
     * {
       margin: 0 auto;
     }
-
     .find {
       text-align: center;
       width: 500px;

@@ -1,6 +1,4 @@
-<?php
-include "dbConn.php";
-session_start();
+<?php include "dbConn.php";
 
 $pw = $_POST['userpw'];
 $pwc = $_POST['userpwc'];
@@ -13,11 +11,13 @@ if ($pw != $pwc) {
 } else {
     $pw = password_hash($_POST['userpw'], PASSWORD_DEFAULT);
 }
+
 $userid = $_SESSION["userid"];
+
 if ($_SESSION['userid'] != null) {
-    $sql = "UPDATE users SET pw = '$pw', phoneN = '$phone' WHERE id = '$userid'";
-    $query = mysqli_query($dbConn, $sql);
+    $sql = mq("UPDATE users SET pw = '$pw', phoneN = '$phone' WHERE id = '$userid';");
     echo "<script>alert('정보변경이 완료되었습니다'); location.href='main.php';</script>";
 } else {
     echo "<script>alert('잘못된 접근입니다.'); history.back();</script>";
-} ?>
+}
+?>

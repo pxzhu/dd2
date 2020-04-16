@@ -1,18 +1,13 @@
-<!--- 게시글 수정 -->
-<?php
-  include "dbConn.php";
-  session_start();
+<?php include "dbConn.php";
 
   $bno = $_GET['idx'];
   $id = $_SESSION['userid'];
-  $sql1 = "SELECT * FROM noticeBoard WHERE idx = '$bno';";
-  $query1 = mysqli_query($dbConn, $sql1);
-  $row = mysqli_fetch_array($query1);
+  $sql1 = mq("SELECT * FROM noticeBoard WHERE idx = '$bno';");
+  $row = mysqli_fetch_array($sql1);
 
   if($id == $row["id"]){
-    $sql = "SELECT * FROM noticeBoard WHERE idx = '$bno';";
-    $query = mysqli_query($dbConn, $sql);
-    $board = mysqli_fetch_array($query);
+    $sql = mq("SELECT * FROM noticeBoard WHERE idx = '$bno';");
+    $board = mysqli_fetch_array($sql);
 ?>
 <!doctype html>
 <!-- 등급 미달시 접근 금지-->
@@ -63,9 +58,6 @@
         <div class="wi_line"></div>
         <div id="in_content">
           <textarea name="content" id="ucontent" placeholder="내용" required><?php echo $board['content']; ?></textarea>
-        </div>
-        <div id="in_lock">
-          <input type="checkbox" value="1" name="lockpost" />비밀글 (작성자와 관리자만 확인 가능합니다)
         </div>
         <div id="in_file">
           <input type="file" value="1" name="file" />

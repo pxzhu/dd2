@@ -1,7 +1,4 @@
-<?php
-include "dbConn.php";
-session_start();
-
+<?php include "dbConn.php";
 session_destroy();
 ?>
 <meta charset="utf-8">

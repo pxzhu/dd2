@@ -1,14 +1,10 @@
-<?php
-  include "dbConn.php";
-  session_start();
-  $id=$_SESSION['userid'];
-  $name=$_SESSION['username'];
-  $con_num=$_POST['bno'];
-  $content=$_POST['content'];
+<?php include "dbConn.php";
+$id=$_SESSION['userid'];
+$name=$_SESSION['username'];
+$con_num=$_POST['bno'];
+$content=$_POST['content'];
 
-  $sql = "INSERT INTO reply(con_num, name, id, content, date)
-  VALUES('$con_num', '$name', '$id', '$content', default);";
-  $query = mysqli_query($dbConn, $sql);
+$sql = mq("INSERT INTO reply(con_num, name, id, content, date) VALUES('$con_num', '$name', '$id', '$content', default);");
 ?>
 <script type="text/javascript">
   alert('댓글이 등록되었습니다.');
