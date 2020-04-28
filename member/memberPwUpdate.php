@@ -15,28 +15,42 @@ if (isset($_SESSION['userid'])) {
     }
     .find {
       text-align: center;
-      width: 500px;
+      width: 300px;
       margin-top: 30px;
+    }
+    .pass{
+      border-right:none;
+      border-left:none;
+      border-top:none;
+      border-bottom:none;
+    }
+    .test{
+        border: solid 2px #D1B6E1;
+    }
+    .btn {
+      margin-top: 10px;
+      width: 300px;
+      background: #D1B6E1;
+      border: solid 0px;
+      color: #FFFFFF;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 10px;
     }
   </style>
 </head>
 
 <body>
-  <div class="find">
-    <form method="post" action="memberPwUpdateOk.php">
-      <h1>비밀번호 변경</h1>
-      <fieldset>
-        <legend></legend>
-        <table>
-          <tr>
-            <td>비밀번호 변경 : </td>
-            <td><input type="password" size="35" name="pw" placeholder="변경비밀번호"></td>
-          </tr>
-        </table>
-        <input type="submit" value="변경하기" />
-      </fieldset>
-    </form>
-  </div>
+  <form class="find" method="post" action="memberPwUpdateOk.php">
+    <fieldset class="test">
+      <table>
+        <tr>
+          <td><input class="pass" type="password" size="30" name="pw" placeholder="변경 비밀번호"></td>
+        </tr>
+      </table>
+    </fieldset>
+    <input class="btn" type="submit" value="변경하기"/>
+  </form>
 </body>
 
 </html>

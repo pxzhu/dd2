@@ -9,59 +9,53 @@ if (isset($_SESSION['userid'])) {
   <title>내 정보</title>
   <link rel="stylesheet" type="text/css" href="/css/menubar.css" />
   <style>
-    * {
+    .find {
       margin: 0 auto;
+      width: 450px;
+      margin-top: 3%;
     }
-    a {
-      color: #333;
+    .btn {
+      margin: 0 auto;
+      margin-top: 10px;
+      width: 480px;
+      background: #D1B6E1;
+      border: solid 0px;
+      color: #FFFFFF;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 10px;
+    }
+    .logo{
+      text-align: center;
+      list-style: none;
+      font-size: 80px;
+      font-weight: bold;
+    }
+    .logo a{
+      color: #D1B6E1;
       text-decoration: none;
     }
-    .find {
-      text-align: center;
-      width: 500px;
-      margin-top: 30px;
+    .mypage{
+      color: #519D9E;
+      font-weight: bold;
     }
   </style>
 </head>
 
 <body>
-  <!--메뉴바 부분-->
-  <div class="menubar">
-    <ul>
-       <li><a href="main.php">홈으로</a></li>
-       <li><a href="#" id="current">게시판</a>
-          <ul>
-            <li><a href="noticeBoard.php">공지사항</a></li>
-            <li><a href="#">질문게시판</a></li>
-            <li><a href="#">선후배게시판</a></li>
-          </ul>
-       </li>
-       <li><a href="#" id="current">학과행사</a>
-         <ul>
-           <li><a href="#">활동사진</a></li>
-           <li><a href="#">일정</a></li>
-         </ul>
-       </li>
-       <li><a href="#" id="current">학교 홈페이지</a>
-         <ul>
-           <li><a href="http://pcu.ac.kr">배재대학교</a></li>
-           <li><a href="http://course.pcu.ac.kr">LMS</a></li>
-           <li><a href="http://tis.pcu.ac.kr">통합정보시스템</a></li>
-         </ul>
-       </li>
-    </ul>
-  </div>
-  <!--여기까지 메뉴바 부분-->
+  <li class="logo"><a href='main.php'>PCUSC</a></li>
   <div class="find">
     <form method="post" action="memberUpdate.php">
 <?php
     $sql = mq("SELECT * FROM users WHERE id='{$_SESSION['userid']}';");
     while ($member = mysqli_fetch_array($sql)) { ?>
-      <h1>내 정보</h1>
-      <p><a href="main.php">홈으로</a></p>
       <fieldset>
-        <legend>마이페이지</legend>
-        <table>
+        <legend class="mypage">MY PAGE</legend>
+        <table class="find">
+          <tr>
+            <td>학번</td>
+            <td><input type="text" size="35" name="code" placeholder="학번" value="<?php echo $member['code']; ?>" disabled></td>
+          </tr>
           <tr>
             <td>이름</td>
             <td><input type="text" size="35" name="name" placeholder="이름" value="<?php echo $member['name']; ?>" disabled></td>
@@ -79,21 +73,16 @@ if (isset($_SESSION['userid'])) {
             <td><input type="password" size="35" name="userpwc" placeholder="비밀번호 확인" required></td>
           </tr>
           <tr>
-            <td>학번</td>
-            <td><input type="text" size="35" name="code" placeholder="학번" value="<?php echo $member['code']; ?>" disabled></td>
+            <td>전화번호</td>
+            <td><input type="text" size="35" name="phone" placeholder="'-'를 제외하고 입력해주십시오." value="<?php echo $member['phoneN']; ?>" required></td>
           </tr>
           <tr>
             <td>이메일</td>
             <td><input type="text" size="35" name="email" placeholder="이메일" value="<?php echo $member['email']; ?>" disabled></td>
           </tr>
-          <tr>
-            <td>핸드폰 번호</td>
-            <td><input type="text" size="35" name="phone" placeholder="'-'를 제외하고 입력해주십시오." value="<?php echo $member['phoneN']; ?>" required></td>
-          </tr>
         </table>
-        <input type="submit" value="정보변경" />
-        <button onclick="history.back();">취소</button>
       </fieldset>
+      <input class="btn" type="submit" value="정보변경" />
       <?php } ?>
     </form>
   </div>

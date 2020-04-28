@@ -4,51 +4,73 @@
 <head>
 	<meta charset="utf-8" />
 	<title>회원가입 폼</title>
-	<script>
-		function checkid() {
-			var userid = document.getElementById("uid").value;
-			if (userid) {
-				url = "check.php?userid=" + userid;
-				window.open(url, "chkid", "width=300,height=100");
-			} else {
-				alert("아이디를 입력하세요");
-			}
-		}
-	</script>
+	<script type="text/javascript" src="/js/checkId.js"></script>
 	<script type="text/javascript" src="/js/common.js"></script>
+	<style>
+		.logo{
+			text-align: center;
+			list-style: none;
+			font-size: 80px;
+			font-weight: bold;
+		}
+		.logo a{
+			color: #D1B6E1;
+			text-decoration: none;
+		}
+		.put {
+      margin: 0 auto;
+      width: 650px;
+      margin-top: 3%;
+    }
+		.btn {
+			margin: 10px auto;
+      width: 680px;
+      background: #D1B6E1;
+      border: solid 0px;
+      color: #FFFFFF;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 10px;
+			display: block;
+    }
+		.in{
+      color: #519D9E;
+      font-weight: bold;
+    }
+	</style>
 </head>
 
 <body>
+	<li class="logo"><a href='main.php'>PCUSC</a></li>
 	<form id="login_box" name=form onsubmit="return checkAll()" class="hc wc" action="memberCheck.php" method="post">
-		<h1>회원가입 폼</h1>
-		<fieldset>
-			<legend>입력사항</legend>
+		<fieldset class="put">
+			<legend class="in">입력사항</legend>
 			<table>
 				<tr>
 					<td>이름</td>
-					<td><input type="text" size="60" name="username" placeholder="이름은 2~4자리 한글로 입력해주세요.(4자리를 초과할 경우 4자리까지만 입력해주세요.)" required maxlength="4"></td>
+					<td><input type="text" size="60" name="username" placeholder="이름" required minlength="2" maxlength="4"></td>
 				</tr>
 				<tr>
 					<td>아이디</td>
-					<td><input type="text" size="60" name="userid" id="uid" check_result="fail" placeholder="영문 대소문자와 숫자를 섞어 6~18자로 입력해주세요!" required maxlength="18">
+					<td><input type="text" size="60" name="userid" id="uid" check_result="fail" placeholder="영문 대소문자와 숫자를 섞어 6~18자로 입력해주세요" required minlength="6" maxlength="18">
 						<input type="button" class="checkbutton" value="중복검사" onclick="checkid();" />
 					</td>
 				</tr>
 				<tr>
 					<td>비밀번호</td>
-					<td><input type="password" size="60" name="userpw" placeholder="영문 대소문자와 숫자와 특수문자를 섞어 8~20자로 입력해주세요!" required maxlength="20"></td>
+					<td><input type="password" size="60" name="userpw" placeholder="영문 대소문자와 숫자와 특수문자를 섞어 8~20자로 입력해주세요" required minlength="8" maxlength="20"></td>
 				</tr>
 				<tr>
 					<td>비밀번호 확인</td>
-					<td><input type="password" size="60" name="userpwc" placeholder="비밀번호를 위와 동일하게 입력해주세요!" required maxlength="20"></td>
+					<td><input type="password" size="60" name="userpwc" placeholder="비밀번호를 위와 동일하게 입력해주세요" required maxlength="20"></td>
 				</tr>
 				<tr>
 					<td>학번</td>
-					<td><input type="text" size="60" name="code" placeholder="학번이 없다면 9999를 입력해주세요." required maxlength="7"></td>
+					<td><input type="text" size="60" name="code" placeholder="학번이 없다면 9999를 입력해주세요" required minlength="4" maxlength="7"></td>
 				</tr>
 				<tr>
 					<td>폰번호</td>
-					<td><input type="text" size="60" name="userphone" placeholder="'-'을 제외하고 입력해주세요." required maxlength="11"></td>
+					<td><input type="text" size="60" name="userphone" placeholder="'-'을 제외하고 입력해주세요" required minlength="10" maxlength="12"></td>
 				</tr>
 				<tr>
 					<td>이메일</td>
@@ -62,12 +84,8 @@
 						</select></td>
 				</tr>
 			</table>
-			<input type="submit" value="가입하기" />
-			<input type="reset" value="다시쓰기" />
 		</fieldset>
-	</form>
-	<form action="login.php">
-		<input type="submit" value="홈으로" />
+		<input class="btn" type="submit" value="가입하기" />
 	</form>
 </body>
 

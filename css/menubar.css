@@ -1,16 +1,16 @@
 .menubar {
   border: none;
   border: 0px;
-  margin: 0px;
+  margin: 10px;
   padding: 0px;
   font: 67.5% "nanumgodic";
-  /*"Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;*/
   font-size: 17px;
   font-weight: bold;
 }
 
 .menubar ul {
-  background: rgb(204, 153, 255);
+    /*#D1B6E1 = rgb(209, 182, 225)*/
+  background: rgb(209, 182, 225);
   height: 50px;
   list-style: none;
   margin: 0;
@@ -23,15 +23,14 @@
 }
 
 .menubar li a {
-  background: rgb(204, 153, 255);
-  color: #cccccc;
+  background: rgb(209, 182, 225);
+  color: #000000;
   display: block;
   font-weight: normal;
   line-height: 50px;
   margin: 0px;
   padding: 0px 25px;
   text-align: center;
-  text-decoration: none;
 }
 
 .menubar li a:hover, .menubar ul li:hover a {
@@ -41,7 +40,7 @@
 }
 
 .menubar li ul {
-  background: rgb(204, 153, 255);
+  background: rgb(209, 182, 225);
   display: none;  /* 평상시에는 드랍메뉴가 안보이게 하기 */
   height: auto;
   padding: 0px;
@@ -59,7 +58,7 @@
 }
 
 .menubar li li {
-  background: rgb(204, 153, 255);
+  background: rgb(209, 182, 225);
   display: block;
   float: none;
   margin: 0px;
