@@ -65,6 +65,12 @@
 >중복검사 ( > 아이디 사용 가능일 때 skyblue로 변경 )    
 >function 수정으로 인한 수정 ( > loginCheck.php, memberCheck.php, memberFindId.php, memberFindPw.php, memberPwUpdateOk.php, memberUpdate.php, myPage.php, noticeBoard.php, noticeDelete.php, noticeModify.php, noticeModifyOk.php, noticeOk.php, noticeRead.php, noticeSearch.php, noticeWrite.php, replyDelete.php, replyOk.php )    
 
+- 2020-04-28
+
+>비밀번호 변경 ( 버튼 크기 변경, 폼 변경 )    
+>마이페이지 ( 메뉴바 삭제, 폼 변경 )    
+>회원가입 ( 폼 변경 )    
+
 
 ##### 참고 사이트 
 [S Writer 네이버](https://m.blog.naver.com/PostList.nhn?blogId=bgpoilkj&categoryNo=20&listStyle=style1)    
