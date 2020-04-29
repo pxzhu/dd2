@@ -8,12 +8,65 @@
   <link rel="stylesheet" type="text/css" href="/css/slide.css" />
 </head>
 <script type="text/javascript" src="/js/slide.js"></script>
+<style>
+  .logo{
+    text-align: center;
+    list-style: none;
+    font-size: 80px;
+    font-weight: bold;
+  }
+  .logo a{
+    color: #D1B6E1;
+    text-decoration: none;
+  }
+  .test{
+    text-align: right;
+    margin-right: 15px;
+  }
+  .test h3{
+    color: #464646;
+  }
+  .test a{
+    text-decoration: none;
+    color: #c8c8c8;
+  }
+  .test input[type="button"]{
+    background: #519D9E;
+    border: solid 0px;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 3px;
+  }
+  .test input[type="button"]:hover{
+    background: #C8C8C8;
+    border: solid 0px;
+    color: #000000;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 3px;
+  }
+</style>
 
 <body>
+  <li class="logo">
+    <a href='main.php'>PCUSC</a>
+  </li>
+  <div class="test">
+  <?php
+  if (isset($_SESSION['userid'])) {
+      echo "<h3>{$_SESSION['username']}({$_SESSION['userid']})님 환영합니다.</h3>"; ?>
+    <a href="logout.php"><input id="button" type="button" value="로그아웃" /></a>
+    <a href="mypage.php"><input id="button" type="button" value="내 정보" /></a>
+  <?php
+  } else { ?>
+    <a href="captchaCheck.php">회원가입 |</a>
+    <a href="login.php"> 로그인하기</a>
+  </div>
+  <?php } ?>
   <!--메뉴바 부분-->
   <div class = "menubar">
      <ul>
-        <li><a href="main.php">홈으로</a></li>
         <li><a href="#" id="current">게시판</a>
            <ul>
              <li><a href="noticeBoard.php">공지사항</a></li>
@@ -37,17 +90,6 @@
      </ul>
   </div>
   <!--여기까지 메뉴바 부분-->
-
-<?php
-if (isset($_SESSION['userid'])) {
-    echo "<h2>{$_SESSION['username']}({$_SESSION['userid']})님 환영합니다.</h2>"; ?>
-  <a href="logout.php"><input id="button" type="button" value="로그아웃" /></a>
-  <a href="mypage.php"><input id="button" type="button" value="내 정보 변경" /></a>
-<?php
-} else { ?>
-  <a href="captchaCheck.php">회원가입 &nbsp; / &nbsp; </a>
-  <a href="login.php">&nbsp;로그인하기</a>
-<?php } ?>
 <!--슬라이드 부분(href이용가능할듯)-->
   <div class="slide">
     <ul>

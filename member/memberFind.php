@@ -22,14 +22,23 @@ if (isset($_SESSION['userid'])) {
       width: 500px;
       margin-top: 30px;
     }
+    .logo{
+      text-align: center;
+      list-style: none;
+      font-size: 80px;
+      font-weight: bold;
+    }
+    .logo a{
+      color: #D1B6E1;
+      text-decoration: none;
+    }
   </style>
 </head>
 
 <body>
   <div class="find">
+    <li class="logo"><a href='main.php'>PCUSC</a></li>
     <form method="post" action="memberFindId.php">
-      <h1>회원계정 찾기</h1>
-      <p><a href="/">홈으로</a></p>
       <fieldset>
         <legend>아이디 찾기</legend>
         <table>

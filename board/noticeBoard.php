@@ -15,7 +15,6 @@ $id = $_SESSION['userid'];
   <!--메뉴바 부분-->
   <div class="menubar">
     <ul>
-       <li><a href="main.php">홈으로</a></li>
        <li><a href="#" id="current">게시판</a>
           <ul>
             <li><a href="noticeBoard.php">공지사항</a></li>
@@ -40,8 +39,7 @@ $id = $_SESSION['userid'];
   </div>
   <!--여기까지 메뉴바 부분-->
   <div id="board_area">
-    <h1>공지사항</h1>
-    <h4>공지사항 게시판입니다.</h4>
+    <h4>공지사항 게시판</h4>
     <table class="list-table">
       <thead>
         <tr>
