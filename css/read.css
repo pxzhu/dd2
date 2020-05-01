@@ -1,0 +1,107 @@
+/* 게시판 */
+.boardR{
+  margin-top: 10px;
+  margin: 0 auto;
+  width: 600px;
+  position: relative;
+}
+.userInfo {
+  text-align: right;
+  margin-right: 10px;
+  width: 600px;
+  font-size: 14px;
+}
+.boardL {
+  width: 600px;
+  height: 2px;
+  background: #519D9E;
+  margin-top: 2px;
+}
+.boardC {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+/* 게시판 끝 */
+
+/* 목록 수정 삭제 */
+.board3 {
+  font-size: 14px;
+  position: absolute;
+  right: 0;
+}
+.board3 ul li {
+  list-style: none;
+  float: left;
+  margin-left: 10px;
+}
+.board3 ul li a{
+  text-decoration: none;
+  color: #519D9E;
+}
+/* 목록 수정 삭제 끝 */
+
+/* 댓글 작성 */
+.replyF {
+  width:600px;
+  margin: 0 auto;
+	margin-top:50px;
+}
+.replyC {
+  border: solid 1px #9DC8C8;
+  resize: none;
+	width:500px;
+	height: 60px;
+}
+.replyB {
+  font-weight: bold;
+	position: absolute;
+	width:85px;
+	height:66px;
+	font-size:16px;
+	margin-left: 10px;
+  background-color: #FFFFFF;
+  border: solid 1px #9DC8C8;
+  color: #519D9E;
+}
+.replyB:hover {
+  font-weight: bold;
+  background-color: #9DC8C8;
+  border: solid 1px #9DC8C8;
+  color: #519D9E;
+}
+/* 댓글 작성 끝 */
+
+/* 댓글 */
+.reList {
+  margin: 0 auto;
+	font-size: 14px;
+	padding:15px 0 10px 0;
+  width: 600px;
+	border-bottom: solid 2px #519D9E;
+}
+.reDate {
+	font-size:12px;
+}
+.reCont {
+	margin-top: 3px;
+  margin-bottom: 4px;
+}
+.reDelB{
+  text-align: right;
+}
+.reDelB button{
+  font-weight: bold;
+	width:50px;
+	height:25px;
+	font-size:14px;
+  background-color: #FFFFFF;
+  border: solid 1px #9DC8C8;
+  color: #519D9E;
+}
+.reDelB button:hover{
+  font-weight: bold;
+  background-color: #9DC8C8;
+  border: solid 1px #9DC8C8;
+  color: #519D9E;
+}
+/* 댓글 끝 */

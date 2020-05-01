@@ -25,13 +25,13 @@ if ($oname != null) {
     }
 
     move_uploaded_file($_FILES['file']['tmp_name'], "$fileDir/$oname");
-    $sql = mq("INSERT INTO noticeBoard(name, id, title, content, date, hit, file) VALUES('$username', '$userid', '$title', '$content', default, 0, '$oname');");
+    $sql = mq("INSERT INTO QNABoard(name, id, title, content, date, hit, file) VALUES('$username', '$userid', '$title', '$content', default, 0, '$oname');");
 }else{
-$sql = mq("INSERT INTO noticeBoard(name, id, title, content, date, hit, file) VALUES('$username', '$userid', '$title', '$content', default, 0, '$oname');");
+$sql = mq("INSERT INTO QNABoard(name, id, title, content, date, hit, file) VALUES('$username', '$userid', '$title', '$content', default, 0, '$oname');");
 }
 ?>
 
 <script type="text/javascript">
   alert("글쓰기 완료되었습니다.");
 </script>
-<meta http-equiv="refresh" content="0 url=noticeBoard.php" />
+<meta http-equiv="refresh" content="0 url=QNABoard.php" />

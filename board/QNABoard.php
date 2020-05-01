@@ -41,7 +41,7 @@ $id = $_SESSION['userid'];
   </div>
   <!--여기까지 메뉴바 부분-->
   <div id="board_area">
-    <h4>공지사항</h4>
+    <h4>질문게시판</h4>
     <table class="list-table">
       <thead>
         <tr>
@@ -58,7 +58,7 @@ $id = $_SESSION['userid'];
         } else {
             $page = 1;
         }
-        $psql = mq("SELECT * FROM noticeBoard;");
+        $psql = mq("SELECT * FROM QNABoard;");
         $row_num = mysqli_num_rows($psql); //게시판 총 레코드 수
         $list = 5; //한 페이지에 보여줄 개수
         $block_pg = 5; //블록당 보여줄 페이지 개수
@@ -74,7 +74,7 @@ $id = $_SESSION['userid'];
         $total_block = ceil($total_page/$block_pg); //블럭 총 개수
         $start_num = ($page - 1) * $list; //시작번호 (page-1)에서 $list를 곱한다.
 
-        $sql = mq("SELECT * FROM noticeBoard ORDER BY idx desc limit $start_num, $list;");
+        $sql = mq("SELECT * FROM QNABoard ORDER BY idx desc limit $start_num, $list;");
          // board테이블에있는 idx를 기준으로 내림차순해서 5개까지 표시
         while ($board = mysqli_fetch_array($sql)) {
             $title = $board["title"]; // $title에 $board에서 불러온 title 저장
@@ -84,7 +84,7 @@ $id = $_SESSION['userid'];
                 $title = str_replace($board["title"], mb_substr($board["title"], 0, 30, "utf-8")."...", $board["title"]);
             }
             $rcidx = $board['idx'];
-            $rcsql = mq("SELECT * FROM reply WHERE con_num='$rcidx';");
+            $rcsql = mq("SELECT * FROM QNAReply WHERE con_num='$rcidx';");
             $rcrow = mysqli_num_rows($rcsql);
 
             ?>
@@ -102,7 +102,7 @@ $id = $_SESSION['userid'];
         <tr>
           <td width="70"><?php echo $board['idx']; ?></td>
           <td width="500">
-            <a href="/noticeRead.php?idx=<?php echo $board['idx']; ?>"><?php echo $title; ?><span id="rcst">[<?php echo $rcrow; ?>]</span> <?php echo $img; ?></a></td>
+            <a href="/QNARead.php?idx=<?php echo $board['idx']; ?>"><?php echo $title; ?><span id="rcst">[<?php echo $rcrow; ?>]</span> <?php echo $img; ?></a></td>
           <td width="120"><?php echo $board['name']; ?></td>
           <td width="100"><?php echo $board['date']; ?> </td>
           <td width="100"><?php echo $board['hit']; ?></td>
@@ -147,13 +147,13 @@ $id = $_SESSION['userid'];
     </div>
     <?php if(isset($id)){?>
     <div id="write_btn">
-      <a href="noticeWrite.php"><button>글쓰기</button></a>
+      <a href="QNAWrite.php"><button>글쓰기</button></a>
     </div>
     <?php } ?>
     <br />
     <!-- 검색 기능 -->
     <div id="search_box">
-      <form action="noticeSearch.php" method="get">
+      <form action="QNASearch.php" method="get">
         <select name="category">
           <option value="title">제목</option>
           <option value="name">글쓴이</option>

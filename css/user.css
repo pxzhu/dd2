@@ -1,0 +1,32 @@
+.userF{
+  width: 800px;
+  margin: 0 auto;
+}
+.user{
+  text-align: right;
+  margin-right: 15px;
+}
+.user h3{
+  color: #464646;
+}
+.user a{
+  text-decoration: none;
+  color: #c8c8c8;
+}
+.user input[type="button"]{
+  background: #519D9E;
+  border: solid 0px;
+  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 3px;
+  margin-bottom: 15px;
+}
+.user input[type="button"]:hover{
+  background: #C8C8C8;
+  border: solid 0px;
+  color: #000000;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 3px;
+}

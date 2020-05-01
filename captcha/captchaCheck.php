@@ -11,18 +11,8 @@
       //capt_img id를 불러와 문구들을 랜덤으로 돌린다
     }
   </script>
+  <link rel="stylesheet" type="text/css" href="/css/logo.css" />
   <style>
-    .logo{
-      text-align: center;
-      list-style: none;
-      font-size: 80px;
-      font-weight: bold;
-      margin-bottom: 10%;
-    }
-    .logo a{
-      color: #D1B6E1;
-      text-decoration: none;
-    }
     .btn input{
       margin-top: 5px;
       width: 80px;

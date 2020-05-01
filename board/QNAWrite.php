@@ -45,7 +45,7 @@ $id = $_SESSION['userid'];
   <div class="boardW">
     <!-- 등급 미달시 접근 금지-->
     <div class="writeA">
-      <form action="noticeOk.php" method="post" enctype="multipart/form-data">
+      <form action="QNAOk.php" method="post" enctype="multipart/form-data">
         <div class="wirteT">
           <textarea name="title" rows="1" cols="40" placeholder="제목" maxlength="100" required></textarea>
         </div>

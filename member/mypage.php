@@ -8,6 +8,7 @@ if (isset($_SESSION['userid'])) {
   <meta charset="utf-8" />
   <title>내 정보</title>
   <link rel="stylesheet" type="text/css" href="/css/menubar.css" />
+  <link rel="stylesheet" type="text/css" href="/css/logo.css" />
   <style>
     .find {
       margin: 0 auto;
@@ -24,16 +25,6 @@ if (isset($_SESSION['userid'])) {
       font-size: 20px;
       font-weight: bold;
       padding: 10px;
-    }
-    .logo{
-      text-align: center;
-      list-style: none;
-      font-size: 80px;
-      font-weight: bold;
-    }
-    .logo a{
-      color: #D1B6E1;
-      text-decoration: none;
     }
     .mypage{
       color: #519D9E;

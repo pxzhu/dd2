@@ -42,11 +42,11 @@ $id = $_SESSION['userid'];
   <!--메뉴바 부분 끝-->
   <?php //게시글 클릭 시 조회수 + 1 증가, DB 저장, 글 불러오기 DB 작업, 비밀글 접근 권한
     $bno = $_GET['idx']; /* bno함수에 idx값을 받아와 넣음*/
-    $sql = mq("SELECT * FROM noticeBoard WHERE idx = '$bno';");
+    $sql = mq("SELECT * FROM QNABoard WHERE idx = '$bno';");
     $array = mysqli_fetch_array($sql);
     $hit = $array['hit'] + 1;
 
-    $bsql = mq("SELECT * FROM noticeBoard WHERE idx = '$bno';");
+    $bsql = mq("SELECT * FROM QNABoard WHERE idx = '$bno';");
     $barray = mysqli_fetch_array($bsql);
   ?>
   <!-- 글 불러오기 -->
@@ -70,9 +70,9 @@ $id = $_SESSION['userid'];
     <!-- 목록, 수정, 삭제 -->
     <div class="board3">
       <ul>
-        <li><a href="noticeBoard.php">[목록으로]</a></li>
-        <li><a href="noticeModify.php?idx=<?php echo $barray['idx']; ?>">[수정]</a></li>
-        <li><a href="noticeDelete.php?idx=<?php echo $barray['idx']; ?>">[삭제]</a></li>
+        <li><a href="QNABoard.php">[목록으로]</a></li>
+        <li><a href="QNAModify.php?idx=<?php echo $barray['idx']; ?>">[수정]</a></li>
+        <li><a href="QNADelete.php?idx=<?php echo $barray['idx']; ?>">[삭제]</a></li>
       </ul>
     </div>
     <!-- 목록, 수정, 삭제 끝 -->
@@ -81,7 +81,7 @@ $id = $_SESSION['userid'];
   <?php if(isset($id)){?>
   <!-- 댓글 입력 창 -->
   <div class="replyF">
-    <form method="post" class="reply_form" action="replyOk.php">
+    <form method="post" class="reply_form" action="QNAReplyOk.php">
       <input type="hidden" name="bno" value="<?php echo $bno; ?>">
       <div style="margin-top:10px;">
         <textarea name="content" class="replyC" required></textarea>
@@ -92,7 +92,7 @@ $id = $_SESSION['userid'];
   <!-- 댓글 입력 창 끝-->
   <?php } ?>
   <?php //댓글 불러오기 DB 작업
-    $rsql = mq("SELECT * FROM reply WHERE con_num = '$bno' ORDER BY idx desc;");
+    $rsql = mq("SELECT * FROM QNAReply WHERE con_num = '$bno' ORDER BY idx desc;");
     while ($reply = mysqli_fetch_array($rsql)) {
   ?>
   <!-- 댓글 불러오기 -->

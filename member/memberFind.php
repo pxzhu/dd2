@@ -9,6 +9,7 @@ if (isset($_SESSION['userid'])) {
 <head>
   <meta charset="utf-8" />
   <title>회원가입 폼</title>
+  <link rel="stylesheet" type="text/css" href="/css/logo.css" />
   <style>
     * {
       margin: 0 auto;
@@ -21,16 +22,6 @@ if (isset($_SESSION['userid'])) {
       text-align: center;
       width: 500px;
       margin-top: 30px;
-    }
-    .logo{
-      text-align: center;
-      list-style: none;
-      font-size: 80px;
-      font-weight: bold;
-    }
-    .logo a{
-      color: #D1B6E1;
-      text-decoration: none;
     }
   </style>
 </head>

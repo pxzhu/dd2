@@ -6,6 +6,7 @@
   <title>회원가입 및 로그인 사이트</title>
   <link rel="stylesheet" type="text/css" href="/css/signUp.css" />
   <link rel="stylesheet" type="text/css" href="/css/menubar.css" />
+  <link rel="stylesheet" type="text/css" href="/css/logo.css" />
 </head>
 
 <body>
