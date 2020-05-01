@@ -146,13 +146,13 @@ $id = $_SESSION['userid'];
       </ul>
     </div>
     <?php if(isset($id)){?>
-    <div id="write_btn">
+    <div class="btn">
       <a href="QNAWrite.php"><button>글쓰기</button></a>
     </div>
     <?php } ?>
     <br />
     <!-- 검색 기능 -->
-    <div id="search_box">
+    <div class="search">
       <form action="QNASearch.php" method="get">
         <select name="category">
           <option value="title">제목</option>

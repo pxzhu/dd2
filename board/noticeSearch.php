@@ -44,9 +44,24 @@ $id = $_SESSION['userid'];
   <?php
   $category = $_GET['category'];
   $search = $_GET['search'];
+  if($category=="title"){
+    $category="제목";
+  }else if($category=="content"){
+    $category="내용";
+  }else if($category=="name"){
+    $category="글쓴이";
+  }
   ?>
-    <h1><?php echo $category; ?>에서 '<?php echo $search; ?>'검색결과</h1>
-    <h4 style="margin-top:30px;"><a href="/">홈으로</a></h4>
+    <h2><?php echo $category; ?> '<?php echo $search; ?>' 검색결과</h2>
+    <?php
+    if($category=="제목"){
+      $category="title";
+    }else if($category=="내용"){
+      $category="content";
+    }else if($category=="글쓴이"){
+      $category="name";
+    }
+     ?>
     <table class="list-table">
       <thead>
         <tr>
@@ -86,7 +101,7 @@ $id = $_SESSION['userid'];
               $img = "";
             }
             ?>
-            <a href='noticeRead.php?idx=<?php echo $board["idx"]; ?>'><span style="background:yellow;"><?php echo $title; ?></span><span class="re_ct">[<?php echo $rcrow; ?>]</span> <?php echo $img; ?></a></td>
+            <a href='noticeRead.php?idx=<?php echo $board["idx"]; ?>'><span style="background:#FAFA96;"><?php echo $title; ?></span><span id="rcst">[<?php echo $rcrow; ?>]</span> <?php echo $img; ?></a></td>
             <td width="120"><?php echo $board['name']; ?></td>
             <td width="100"><?php echo $board['date']; ?> </td>
             <td width="100"><?php echo $board['hit']; ?></td>
@@ -96,13 +111,13 @@ $id = $_SESSION['userid'];
       <?php } ?>
     </table>
     <?php if(isset($id)){?>
-    <div id="write_btn">
+    <div class="btn">
       <a href="noticeWrite.php"><button>글쓰기</button></a>
     </div>
     <?php } ?>
     <br />
     <!-- 검색 기능 -->
-    <div id="search_box">
+    <div class="search">
       <form action="noticeSearch.php" method="get">
         <select name="category">
           <option value="title">제목</option>
