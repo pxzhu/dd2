@@ -1,20 +1,17 @@
 <?php include "dbConn.php";
 
+// 아이디 중복체크 
 $uid = $_GET['userid'];
-
 $sql = mq("SELECT id FROM users WHERE id='$uid';");
 $row = mysqli_num_rows($sql);
 
+$returnStr="";
+
 if ($row==0) {
-    ?>
-<div style='font-family:"malgun gothic"; color:skyblue;'><?php echo $uid; ?>는 사용가능한 아이디입니다.</div>
-<?php
+  $returnStr="0";
 } else {
-        ?>
-<div style='font-family:"malgun gothic"; color:red;'><?php echo $uid; ?>중복된아이디입니다.</div>
-<?php
-    }
+  $returnStr="1";
+}
+mysqli_free_result($result);
+echo $returnStr;
 ?>
-<button value="닫기" onclick="window.close()">닫기</button>
-<script>
-</script>

@@ -4,30 +4,31 @@
 <head>
 	<meta charset="utf-8" />
 	<title>회원가입 폼</title>
-	<script type="text/javascript" src="/js/checkId.js"></script>
+	<script type="text/javascript" src="/js/jquery-3.5.0.min.js"></script>
 	<script type="text/javascript" src="/js/common.js"></script>
+	<script type="text/javascript" src="/js/checkId.js"></script>
 	<link rel="stylesheet" type="text/css" href="/css/logo.css" />
 	<style>
 		.put {
-      margin: 0 auto;
-      width: 650px;
-      margin-top: 3%;
-    }
+	  	margin: 0 auto;
+	  	width: 650px;
+	  	margin-top: 3%;
+		}
 		.btn {
-			margin: 10px auto;
-      width: 680px;
-      background: #D1B6E1;
-      border: solid 0px;
-      color: #FFFFFF;
-      font-size: 20px;
-      font-weight: bold;
-      padding: 10px;
-			display: block;
-    }
+	  	margin: 10px auto;
+	  	width: 680px;
+	  	background: #D1B6E1;
+	  	border: solid 0px;
+	  	color: #FFFFFF;
+	  	font-size: 20px;
+	  	font-weight: bold;
+	  	padding: 10px;
+	  	display: block;
+		}
 		.in{
-      color: #519D9E;
-      font-weight: bold;
-    }
+	  	color: #519D9E;
+	  	font-weight: bold;
+		}
 	</style>
 </head>
 
@@ -43,8 +44,11 @@
 				</tr>
 				<tr>
 					<td>아이디</td>
-					<td><input type="text" size="60" name="userid" id="uid" check_result="fail" placeholder="영문 대소문자와 숫자를 섞어 6~18자로 입력해주세요" required minlength="6" maxlength="18">
-						<input type="button" class="checkbutton" value="중복검사" onclick="checkid();" />
+					<td>
+						<input type="text" size="60" id="uid" check_result="false" name="userid" placeholder="영문 대소문자와 숫자를 섞어 6~18자로 입력해주세요" required minlength="6" maxlength="18">
+					</td>
+					<td>
+						<div class="row"></div>
 					</td>
 				</tr>
 				<tr>
