@@ -95,17 +95,22 @@
 
 
 ##### 참고 사이트 
+@@@ 네이버 @@@    
 [S Writer 네이버](https://m.blog.naver.com/PostList.nhn?blogId=bgpoilkj&categoryNo=20&listStyle=style1)    
-[everdevel](https://www.everdevel.com/)    
 [Demnodey 네이버](https://m.blog.naver.com/psj9102/221223524085)    
+    
+@@@ 티스토리 @@@    
 [zzaps 티스토리](https://zzaps.tistory.com/30)    
 [WEBDIR 티스토리](https://webdir.tistory.com/31)    
+[두루루루루 티스토리](https://estar.tistory.com/76)    
+[개발하는개발자 티스토리](https://olsh1108o.tistory.com/entry/JS-%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85-%EC%9C%A0%ED%9A%A8%EC%84%B1-%EA%B2%80%EC%82%AC)    
+[동해둘이의 IT Study 티스토리](https://doolyit.tistory.com/126)    
+[onblur 티스토리](https://ghstylus.tistory.com/13)    
+    
+@@@ 기타 @@@    
+[everdevel](https://www.everdevel.com/)    
 [re-fresh-studio](http://re-fresh-studio.com/2013/07/post-12-dropmenu_with_css.php)    
 [DevNote](http://ttorr.blogspot.com/2013/08/php-date.html)    
 [제타위키](https://zetawiki.com/wiki/PHP_%ED%8C%8C%EC%9D%BC_%EC%97%85%EB%A1%9C%EB%93%9C_%EA%B5%AC%ED%98%84)    
-[두루루루루 티스토리](https://estar.tistory.com/76)    
-[개발하는개발자 티스토리](https://olsh1108o.tistory.com/entry/JS-%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85-%EC%9C%A0%ED%9A%A8%EC%84%B1-%EA%B2%80%EC%82%AC)    
-[개발자 황준일](http://junil-hwang.com/blog/javascript-slide-animation/)    
-[동해둘이의 IT Study 티스토리](https://doolyit.tistory.com/126)    
-[onblur 티스토리](https://ghstylus.tistory.com/13)    
+[개발자 황준일](http://junil-hwang.com/blog/javascript-slide-animation/)     
 [w3schools](https://www.w3schools.com/jquery/event_keyup.asp)    
