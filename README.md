@@ -87,6 +87,12 @@
 >글 목록 ( > 검색 버튼, 글쓰기 버튼, 검색어 입력 창, 카테고리 select 박스 폼 변경 )    
 >검색 시 화면 ( > 검색 결과 한글, 크기 축소, 해당 글 강조 색 변경 )    
 
+- 2020-05-03
+
+>정규 표현식 ( > 정규 표현식 검사 이후 중복 검사 실시 )    
+>중복 검사 ( > 버튼 삭제, 실시간 검사로 변경 )    
+
+
 
 ##### 참고 사이트 
 [S Writer 네이버](https://m.blog.naver.com/PostList.nhn?blogId=bgpoilkj&categoryNo=20&listStyle=style1)    
@@ -101,4 +107,5 @@
 [개발하는개발자 티스토리](https://olsh1108o.tistory.com/entry/JS-%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85-%EC%9C%A0%ED%9A%A8%EC%84%B1-%EA%B2%80%EC%82%AC)    
 [개발자 황준일](http://junil-hwang.com/blog/javascript-slide-animation/)    
 [동해둘이의 IT Study 티스토리](https://doolyit.tistory.com/126)    
-
+[onblur 티스토리](https://ghstylus.tistory.com/13)    
+[w3schools](https://www.w3schools.com/jquery/event_keyup.asp)    
