@@ -21,7 +21,7 @@ $id = $_SESSION['userid'];
           <ul>
             <li><a href="noticeBoard.php">공지사항</a></li>
             <li><a href="QNABoard.php">질문게시판</a></li>
-            <li><a href="#">선후배게시판</a></li>
+            <li><a href="SJBoard.php">선후배게시판</a></li>
           </ul>
        </li>
        <li><a href="#" id="current">학과행사</a>

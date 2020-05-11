@@ -4,7 +4,9 @@
   $id = $_SESSION['userid'];
   $sql = mq("SELECT * FROM noticeBoard WHERE idx = '$bno';");
   $row = mysqli_fetch_array($sql);
-  if($id == $row["id"]){
+  $msql = mq("SELECT manager FROM Users WHERE id = '$id';");
+  $mrow = mysqli_fetch_array($msql);
+  if($id == $row["id"] || $mrow["manager"] == '99'){
   $dsql = mq("DELETE FROM noticeBoard WHERE idx = '$bno';");
 ?>
 <!-- 등급 미달시 접근 금지-->

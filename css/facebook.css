@@ -1,0 +1,15 @@
+.facebook{
+  position: absolute;
+  bottom: 2%;
+  right: 2%;
+  float:right;
+  margin-right: 50px;
+  margin-top: 100px;
+}
+
+.facebook a{
+  text-decoration: none;
+  color: #3B5998;
+  font-size: 20px;
+  font-weight: bold;
+}

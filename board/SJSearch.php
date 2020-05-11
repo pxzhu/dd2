@@ -75,7 +75,7 @@ $id = $_SESSION['userid'];
 
       <?php
       $searchch = "'%$search%'";
-      $sql = mq("SELECT * FROM QNABoard WHERE $category like $searchch ORDER BY idx desc;");
+      $sql = mq("SELECT * FROM SJBoard WHERE $category like $searchch ORDER BY idx desc;");
        // board테이블에있는 idx를 기준으로 내림차순해서 5개까지 표시
       while ($board=mysqli_fetch_array($sql)) {
         $title=$board["title"];
@@ -101,7 +101,7 @@ $id = $_SESSION['userid'];
               $img = "";
             }
             ?>
-            <a href='QNARead.php?idx=<?php echo $board["idx"]; ?>'><span style="background:#FAFA96;"><?php echo $title; ?></span><span id="rcst">[<?php echo $rcrow; ?>]</span> <?php echo $img; ?></a></td>
+            <a href='SJRead.php?idx=<?php echo $board["idx"]; ?>'><span style="background:#FAFA96;"><?php echo $title; ?></span><span id="rcst">[<?php echo $rcrow; ?>]</span> <?php echo $img; ?></a></td>
             <td width="120"><?php echo $board['name']; ?></td>
             <td width="100"><?php echo $board['date']; ?> </td>
             <td width="100"><?php echo $board['hit']; ?></td>
@@ -112,13 +112,13 @@ $id = $_SESSION['userid'];
     </table>
     <?php if(isset($id)){?>
     <div class="btn">
-      <a href="QNAWrite.php"><button>글쓰기</button></a>
+      <a href="SJWrite.php"><button>글쓰기</button></a>
     </div>
     <?php } ?>
     <br />
     <!-- 검색 기능 -->
     <div class="search">
-      <form action="QNASearch.php" method="get">
+      <form action="SJSearch.php" method="get">
         <select name="category">
           <option value="title">제목</option>
           <option value="name">글쓴이</option>

@@ -15,8 +15,8 @@ if($check >= 1){
 }else{
 
 $pw = password_hash($_POST['userpw'], PASSWORD_DEFAULT);
-$sql = mq("INSERT INTO users(name,id,pw,code,email,phoneN)
-    VALUES('$name', '$id', '$pw', '$code', '$email', '$phone');");
+$sql = mq("INSERT INTO users(name,id,pw,code,email,phoneN,manager)
+    VALUES('$name', '$id', '$pw', '$code', '$email', '$phone','');");
 ?>
 <meta charset="utf-8" />
 <script type="text/javascript">

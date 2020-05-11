@@ -1,16 +1,8 @@
 <?php include "dbConn.php";
-
-  $bno = $_GET['idx'];
-  $id = $_SESSION['userid'];
-  $sql1 = mq("SELECT * FROM noticeBoard WHERE idx = '$bno';");
-  $row = mysqli_fetch_array($sql1);
-
-  if($id == $row["id"]){
-    $sql = mq("SELECT * FROM noticeBoard WHERE idx = '$bno';");
-    $board = mysqli_fetch_array($sql);
+$id = $_SESSION['userid'];
 ?>
 <!doctype html>
-<!-- 등급 미달시 접근 금지-->
+
 <head>
   <meta charset="UTF-8">
   <title>게시판</title>
@@ -20,6 +12,9 @@
 </head>
 
 <body>
+
+  <?php
+  if(isset($id)){ ?>
   <li class="logo"><a href='main.php'>PCUSC</a></li>
   <!--메뉴바 부분-->
   <div class="menubar">
@@ -46,32 +41,32 @@
        </li>
     </ul>
   </div>
-  <!--여기까지 메뉴바 부분-->
+  <!--메뉴바 부분 끝-->
   <div class="boardW">
+    <!-- 등급 미달시 접근 금지-->
     <div class="writeA">
-      <form action="noticeModifyOk.php/<?php echo $board['idx']; ?>" method="post">
-        <input type="hidden" name="idx" value="<?=$bno?>" />
+      <form action="SJOk.php" method="post" enctype="multipart/form-data">
         <div class="wirteT">
-          <textarea name="title" rows="1" cols="55" placeholder="제목" maxlength="100" required><?php echo $board['title']; ?></textarea>
+          <textarea name="title" rows="1" cols="40" placeholder="제목" maxlength="100" required></textarea>
         </div>
         <div class="writeC">
-          <textarea name="content" placeholder="내용" required><?php echo $board['content']; ?></textarea>
+          <textarea name="content" placeholder="내용" required></textarea>
         </div>
         <input type="file" value="1" name="file" />
         <div class="btn">
-          <button type="submit">수정하기</button>
+          <button type="submit">작성완료</button>
           <input type="button" onclick="history.back();" value="취소"/>
         </div>
       </form>
     </div>
   </div>
-<?php
-  }else{  ?>
-    <script type="text/javascript">
-      alert("수정 권한이 없습니다.");
-      history.back();
-    </script>
-  <?php } ?>
 </body>
+<?php } else{ ?>
+  <script type="text/javascript">
+    alert("글쓰기 권한이 없습니다.");
+    history.back();
+  </script>
+<?php } ?>
+
 
 </html>

@@ -2,11 +2,11 @@
 
   $bno = $_GET['idx'];
   $id = $_SESSION['userid'];
-  $sql1 = mq("SELECT * FROM noticeBoard WHERE idx = '$bno';");
+  $sql1 = mq("SELECT * FROM SJBoard WHERE idx = '$bno';");
   $row = mysqli_fetch_array($sql1);
 
   if($id == $row["id"]){
-    $sql = mq("SELECT * FROM noticeBoard WHERE idx = '$bno';");
+    $sql = mq("SELECT * FROM SJBoard WHERE idx = '$bno';");
     $board = mysqli_fetch_array($sql);
 ?>
 <!doctype html>
@@ -49,7 +49,7 @@
   <!--여기까지 메뉴바 부분-->
   <div class="boardW">
     <div class="writeA">
-      <form action="noticeModifyOk.php/<?php echo $board['idx']; ?>" method="post">
+      <form action="SJModifyOk.php/<?php echo $board['idx']; ?>" method="post">
         <input type="hidden" name="idx" value="<?=$bno?>" />
         <div class="wirteT">
           <textarea name="title" rows="1" cols="55" placeholder="제목" maxlength="100" required><?php echo $board['title']; ?></textarea>

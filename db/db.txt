@@ -6,7 +6,7 @@ CREATE TABLE users(
 	code varchar(7) not null,
 	email varchar(100) not null,
 	phoneN varchar(11) not null,
-	
+	manager varchar(2) not null,
 	primary key(seq, id)
 );
 
@@ -44,6 +44,22 @@ INSERT INTO QNABoard(name, id, title, content, date, hit, file) VALUES('어드�
 
 DROP TABLE QNABoard;
 
+CREATE TABLE SJBoard(
+	idx int auto_increment,
+	name varchar(4) not null,
+	id varchar(18) not null,
+	title varchar(100) not null,
+	content text not null,
+	date TIMESTAMP DEFAULT NOW(),
+	hit int not null,
+	file varchar(100) not null,
+	primary key(idx)
+);
+
+INSERT INTO SJBoard(name, id, title, content, date, hit, file) VALUES('어드민', 'admin', '제목', '내용', default, 0 , '');
+
+DROP TABLE SJBoard;
+
 CREATE TABLE reply (
 	idx int auto_increment,
 	con_num int not null,
@@ -73,3 +89,18 @@ INSERT INTO QNAReply(con_num, name, id, content, date)
 VALUES('25', '어드민', 'admin', '테스트1232', default);
 
 DROP TABLE QNAReply;
+
+CREATE TABLE SJReply (
+	idx int auto_increment,
+	con_num int not null,
+	name varchar(4) not null,
+	id varchar(18) not null,
+	content text not null,
+	date TIMESTAMP DEFAULT NOW(),
+	primary key(idx)
+);
+
+INSERT INTO SJReply(con_num, name, id, content, date)
+VALUES('25', '어드민', 'admin', '테스트1232', default);
+
+DROP TABLE SJReply;
