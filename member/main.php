@@ -5,11 +5,14 @@
   <meta charset="utf-8" />
   <title>메인페이지</title>
   <script type="text/javascript" src="/js/slide.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
   <link rel="stylesheet" type="text/css" href="/css/menubar.css" />
   <link rel="stylesheet" type="text/css" href="/css/user.css" />
   <link rel="stylesheet" type="text/css" href="/css/slide.css" />
   <link rel="stylesheet" type="text/css" href="/css/logo.css" />
   <link rel="stylesheet" type="text/css" href="/css/facebook.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/swiper.css" />
 </head>
 
 <body>
@@ -70,6 +73,38 @@
     </ul>
   </div>
   <!-- 활동 사진 슬라이드 끝 -->
+
+  <!-- 교수님 사진 스와이퍼
+    Swiper를 사용하기 위한 최소 기본 형태
+    클래스명은 변경하면 안 됨 -->
+  <div class="swiper-container">
+	   <div class="swiper-wrapper">
+		     <div class="swiper-slide"><img src="/img/professor/01조인준 교수님.png"></div>
+         <div class="swiper-slide"><img src="/img/professor/02이병엽 교수님.png"></div>
+         <div class="swiper-slide"><img src="/img/professor/03함형민 교수님.png"></div>
+         <div class="swiper-slide"><img src="/img/professor/04곽내정 교수님.png"></div>
+         <div class="swiper-slide"><img src="/img/professor/05서상훈 교수님.png"></div>
+         <div class="swiper-slide"><img src="/img/professor/06신영진 교수님.png"></div>
+         <div class="swiper-slide"><img src="/img/professor/07김은중 교수님.png"></div>
+         <div class="swiper-slide"><img src="/img/professor/08강무영 교수님.png"></div>
+     </div>
+     <!-- 네비게이션 지정 -->
+	    <div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
+	    <div class="swiper-button-prev"></div><!-- 이전 버튼 -->
+  </div>
+
+  <!-- 좌우 버튼 스크립트 -->
+  <script>
+    new Swiper('.swiper-container', {
+      navigation : {
+        nextEl : '.swiper-button-next', // 다음 버튼 클래스명
+        prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
+      },
+    });
+  </script>
+  <!-- 좌우 버튼 스크립트 끝 -->
+
+  <!-- 교수님 사진 스와이퍼 끝 -->
 
   <!-- 페이스북 링크 -->
   <div class="facebook">
