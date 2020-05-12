@@ -31,12 +31,14 @@ if (isset($_SESSION['userid'])) {
       font-weight: bold;
     }
   </style>
+  <script type="text/javascript" src="/js/checkPw.js"></script>
+  <script type="text/javascript" src="/js/jquery-3.5.0.min.js"></script>
 </head>
 
 <body>
   <li class="logo"><a href='main.php'>PCUSC</a></li>
   <div class="find">
-    <form method="post" action="memberUpdate.php">
+    <form onsubmit="return checkAll()" name="form" method="post" action="memberUpdate.php">
 <?php
     $sql = mq("SELECT * FROM users WHERE id='{$_SESSION['userid']}';");
     while ($member = mysqli_fetch_array($sql)) { ?>

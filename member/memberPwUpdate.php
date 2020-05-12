@@ -38,14 +38,16 @@ if (isset($_SESSION['userid'])) {
       padding: 10px;
     }
   </style>
+  <script type="text/javascript" src="/js/checkPw.js"></script>
+  <script type="text/javascript" src="/js/jquery-3.5.0.min.js"></script>
 </head>
 
 <body>
-  <form class="find" method="post" action="memberPwUpdateOk.php">
+  <form onsubmit="return upCheckAll()"  name="form" class="find" method="post" action="memberPwUpdateOk.php">
     <fieldset class="test">
       <table>
         <tr>
-          <td><input class="pass" type="password" size="30" name="pw" placeholder="변경 비밀번호"></td>
+          <td><input class="pass" type="password" size="30" name="userpw" placeholder="변경 비밀번호"></td>
         </tr>
       </table>
     </fieldset>

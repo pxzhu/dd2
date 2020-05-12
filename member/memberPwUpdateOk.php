@@ -1,6 +1,6 @@
 <?php include "dbConn.php";
 
-$userpw = password_hash($_POST["pw"], PASSWORD_DEFAULT);
+$userpw = password_hash($_POST["userpw"], PASSWORD_DEFAULT);
 $userid = $_SESSION["uid"];
 
 if ($_SESSION['uid'] != null) {
