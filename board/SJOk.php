@@ -1,4 +1,4 @@
-<?php include "dbConn.php";
+<?php include "../db/dbConn.php";
 
 $username = $_SESSION['username'];
 $userid = $_SESSION['userid'];
@@ -34,4 +34,4 @@ $sql = mq("INSERT INTO SJBoard(name, id, title, content, date, hit, file) VALUES
 <script type="text/javascript">
   alert("글쓰기 완료되었습니다.");
 </script>
-<meta http-equiv="refresh" content="0 url=SJBoard.php" />
+<meta http-equiv="refresh" content="0 url=/board/SJBoard.php" />

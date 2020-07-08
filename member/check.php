@@ -1,6 +1,6 @@
-<?php include "dbConn.php";
+<?php include "/db/dbConn.php";
 
-// 아이디 중복체크 
+// 아이디 중복체크
 $uid = $_GET['userid'];
 $sql = mq("SELECT id FROM users WHERE id='$uid';");
 $row = mysqli_num_rows($sql);

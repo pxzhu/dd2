@@ -1,4 +1,4 @@
-<?php include "dbConn.php"; ?>
+<?php include "/db/dbConn.php"; ?>
 <!DOCTYPE html>
 
 <head>
@@ -17,16 +17,16 @@
 
 <body>
   <!-- 로고 -->
-  <li class="logo"><a href='main.php'>PCUSC</a></li>
+  <li class="logo"><a href='/member/main.php'>PCUSC</a></li>
 
   <!-- 메뉴바 -->
   <div class = "menubar">
      <ul>
         <li><a href="#" id="current">게시판</a>
            <ul>
-             <li><a href="noticeBoard.php">공지사항</a></li>
-             <li><a href="QNABoard.php">질문게시판</a></li>
-             <li><a href="SJBoard.php">선후배게시판</a></li>
+             <li><a href="/board/noticeBoard.php">공지사항</a></li>
+             <li><a href="/board/QNABoard.php">질문게시판</a></li>
+             <li><a href="/board/SJBoard.php">선후배게시판</a></li>
            </ul>
         </li>
         <li><a href="#" id="current">학과행사</a>
@@ -56,8 +56,8 @@
         <a href="mypage.php"><input id="button" type="button" value="내 정보" /></a>
         <?php
       } else { ?>
-        <a href="captchaCheck.php">회원가입 |</a>
-        <a href="login.php"> 로그인하기</a>
+        <a href="/captcha/captchaCheck.php">회원가입 |</a>
+        <a href="/member/login.php"> 로그인하기</a>
       <?php } ?>
     </div>
   </div>

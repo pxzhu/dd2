@@ -1,4 +1,4 @@
-<?php include "dbConn.php";
+<?php include "/db/dbConn.php";
 if (isset($_SESSION['userid'])) {
 ?>
 <!DOCTYPE html>
@@ -36,9 +36,9 @@ if (isset($_SESSION['userid'])) {
 </head>
 
 <body>
-  <li class="logo"><a href='main.php'>PCUSC</a></li>
+  <li class="logo"><a href='/member/main.php'>PCUSC</a></li>
   <div class="find">
-    <form onsubmit="return checkAll()" name="form" method="post" action="memberUpdate.php">
+    <form onsubmit="return checkAll()" name="form" method="post" action="/member/memberUpdate.php">
 <?php
     $sql = mq("SELECT * FROM users WHERE id='{$_SESSION['userid']}';");
     while ($member = mysqli_fetch_array($sql)) { ?>

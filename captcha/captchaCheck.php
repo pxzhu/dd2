@@ -50,9 +50,9 @@
 </head>
 
 <body>
-  <li class="logo"><a href='main.php'>PCUSC</a></li>
+  <li class="logo"><a href='/member/main.php'>PCUSC</a></li>
   <form class="test" method="post" action="captchaOk.php">
-    <img src="captcha.php" alt="captcha" title="captcha" id="capt_img" />
+    <img src="/captcha/captcha.php" alt="captcha" title="captcha" id="capt_img" />
     <img class="resize" src = /img/refresh.png onclick="refresh_captcha()"/>
     <input type="text" name="captcha" size=7 placeholder="입력"/>
     <div class="btn">

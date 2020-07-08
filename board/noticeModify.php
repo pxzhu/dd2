@@ -1,4 +1,4 @@
-<?php include "dbConn.php";
+<?php include "../db/dbConn.php";
 
   $bno = $_GET['idx'];
   $id = $_SESSION['userid'];
@@ -20,15 +20,15 @@
 </head>
 
 <body>
-  <li class="logo"><a href='main.php'>PCUSC</a></li>
+  <li class="logo"><a href='/member/main.php'>PCUSC</a></li>
   <!--메뉴바 부분-->
   <div class="menubar">
     <ul>
        <li><a href="#" id="current">게시판</a>
           <ul>
-            <li><a href="noticeBoard.php">공지사항</a></li>
-            <li><a href="QNABoard.php">질문게시판</a></li>
-            <li><a href="SJBoard.php">선후배게시판</a></li>
+            <li><a href="/board/noticeBoard.php">공지사항</a></li>
+            <li><a href="/board/QNABoard.php">질문게시판</a></li>
+            <li><a href="/board/SJBoard.php">선후배게시판</a></li>
           </ul>
        </li>
        <li><a href="#" id="current">학과행사</a>
@@ -49,7 +49,7 @@
   <!--여기까지 메뉴바 부분-->
   <div class="boardW">
     <div class="writeA">
-      <form action="noticeModifyOk.php/<?php echo $board['idx']; ?>" method="post">
+      <form action="/board/noticeModifyOk.php/<?php echo $board['idx']; ?>" method="post">
         <input type="hidden" name="idx" value="<?=$bno?>" />
         <div class="wirteT">
           <textarea name="title" rows="1" cols="55" placeholder="제목" maxlength="100" required><?php echo $board['title']; ?></textarea>

@@ -1,5 +1,5 @@
 <?php
-include "dbConn.php";
+include "/db/dbConn.php";
 $name = $_POST['username'];
 $id = $_POST['userid'];
 $pw = $_POST['userpw'];
@@ -22,5 +22,5 @@ $sql = mq("INSERT INTO users(name,id,pw,code,email,phoneN,manager)
 <script type="text/javascript">
   alert('회원가입이 완료되었습니다.');
 </script>
-<meta http-equiv="refresh" content="0 url=/login.php">
+<meta http-equiv="refresh" content="0 url=/member/login.php">
 <?php } ?>

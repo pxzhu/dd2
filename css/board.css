@@ -16,6 +16,80 @@ ul li {
   list-style: none;
 }
 
+/* 검색 부분 */
+.search{
+  text-align: center;
+  margin: 0 auto;
+}
+.search select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0px;
+  background: url('/img/arrow.jpg') no-repeat 95% 50%;
+  text-align: center;
+  width: 80px;
+  border: solid 1px #9DC8C8;
+  font-size: 13px;
+  padding: 10px;
+}
+.search select::-ms-expand{
+  display: none;
+}
+.search form{
+  margin-top: 45px;
+}
+.search form input[type="text"]{
+  background-color: #FFFFFF;
+  border: solid 1px #9DC8C8;
+  color: #519D9E;
+  width: 200px;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 10px;
+}
+.search button{
+  text-align: center;
+  width: 80px;
+  background-color: #FFFFFF;
+  border: solid 1px #9DC8C8;
+  color: #519D9E;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 10px;
+}
+.search button:hover{
+  font-weight: bold;
+  background-color: #9DC8C8;
+  border: solid 1px #9DC8C8;
+  color: #519D9E;
+}
+/* 검색 부분 끝 */
+
+/* 글쓰기 */
+.btn{
+  right: 0;
+  position: absolute;
+  margin-top: 20px;
+}
+.btn button{
+  text-align: center;
+  width: 80px;
+  background-color: #FFFFFF;
+  border: solid 1px #9DC8C8;
+  color: #519D9E;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 10px;
+}
+.btn button:hover{
+  font-weight: bold;
+  background-color: #9DC8C8;
+  border: solid 1px #9DC8C8;
+  color: #519D9E;
+}
+/* 글쓰기 끝 */
+
 /* 공통 */
 .fl {
   float: left;
@@ -23,6 +97,11 @@ ul li {
 
 .tc {
   text-align: center;
+}
+
+#rcst{
+  font-weight: bold;
+  color: blue;
 }
 
 /* 게시판 목록 */
@@ -37,8 +116,8 @@ ul li {
 
 .list-table thead th {
   height: 40px;
-  border-top: 2px solid #09C;
-  border-bottom: 1px solid #CCC;
+  border-top: 2px solid #519D9E;
+  border-bottom: 1px solid #c8c8c8;
   font-weight: bold;
   font-size: 17px;
 }
@@ -55,4 +134,28 @@ ul li {
   position: absolute;
   margin-top: 20px;
   right: 0;
+}
+
+#page_num {
+  margin: 0 auto;
+  width: 430px;
+  font-size: 14px;
+  margin-top: 30px;
+}
+
+#page_num ul li{
+  margin: 0 auto;
+  width: 43px;
+  float: left;
+  margin-left: 10px;
+  text-align: center;
+}
+
+.fo_re {
+  font-weight: bold;
+  color: red;
+}
+
+h2{
+  margin-top: 15px;
 }

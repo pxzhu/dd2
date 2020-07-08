@@ -1,4 +1,4 @@
-<?php include  "dbConn.php";
+<?php include  "../db/dbConn.php";
 $id = $_SESSION['userid'];
 ?>
 
@@ -13,15 +13,15 @@ $id = $_SESSION['userid'];
 </head>
 
 <body>
-  <li class="logo"><a href='main.php'>PCUSC</a></li>
+  <li class="logo"><a href='/member/main.php'>PCUSC</a></li>
   <!--메뉴바 부분-->
   <div class="menubar">
     <ul>
        <li><a href="#" id="current">게시판</a>
           <ul>
-            <li><a href="noticeBoard.php">공지사항</a></li>
-            <li><a href="QNABoard.php">질문게시판</a></li>
-            <li><a href="SJBoard.php">선후배게시판</a></li>
+            <li><a href="/board/noticeBoard.php">공지사항</a></li>
+            <li><a href="/board/QNABoard.php">질문게시판</a></li>
+            <li><a href="/board/SJBoard.php">선후배게시판</a></li>
           </ul>
        </li>
        <li><a href="#" id="current">학과행사</a>
@@ -102,7 +102,7 @@ $id = $_SESSION['userid'];
         <tr>
           <td width="70"><?php echo $board['idx']; ?></td>
           <td width="500">
-            <a href="/QNARead.php?idx=<?php echo $board['idx']; ?>"><?php echo $title; ?><span id="rcst">[<?php echo $rcrow; ?>]</span> <?php echo $img; ?></a></td>
+            <a href="/board/QNARead.php?idx=<?php echo $board['idx']; ?>"><?php echo $title; ?><span id="rcst">[<?php echo $rcrow; ?>]</span> <?php echo $img; ?></a></td>
           <td width="120"><?php echo $board['name']; ?></td>
           <td width="100"><?php echo $board['date']; ?> </td>
           <td width="100"><?php echo $board['hit']; ?></td>
@@ -147,13 +147,13 @@ $id = $_SESSION['userid'];
     </div>
     <?php if(isset($id)){?>
     <div class="btn">
-      <a href="QNAWrite.php"><button>글쓰기</button></a>
+      <a href="/board/QNAWrite.php"><button>글쓰기</button></a>
     </div>
     <?php } ?>
     <br />
     <!-- 검색 기능 -->
     <div class="search">
-      <form action="QNASearch.php" method="get">
+      <form action="/board/QNASearch.php" method="get">
         <select name="category">
           <option value="title">제목</option>
           <option value="name">글쓴이</option>

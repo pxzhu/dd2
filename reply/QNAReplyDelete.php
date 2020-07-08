@@ -1,4 +1,4 @@
-<?php include "dbConn.php";
+<?php include "../db/dbConn.php";
 
 $con_num = $_POST['bno'];
 $id=$_SESSION['userid'];
@@ -10,5 +10,5 @@ $sql = mq("DELETE FROM QNAReply WHERE id='$id' AND con_num = '$con_num' AND cont
 
 <script type="text/javascript">
   alert('댓글이 삭제되었습니다.');
-  location.replace("noticeRead.php?idx=<?php echo $con_num; ?>");
+  location.replace("/board/QNARead.php?idx=<?php echo $con_num; ?>");
 </script>

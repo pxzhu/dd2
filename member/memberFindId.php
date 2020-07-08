@@ -1,4 +1,4 @@
-<?php include "dbConn.php";
+<?php include "/db/dbConn.php";
 
 if ($_POST["name"] == "" || $_POST["code"] == "" || $_POST["phone"] == "" || $_POST["email"] == "") {
     echo '<script> alert("항목을 입력하세요"); history.back(); </script>';

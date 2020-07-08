@@ -1,4 +1,4 @@
-<?php include "dbConn.php";
+<?php include "../db/dbConn.php";
 
   $bno = $_GET['idx'];
   $id = $_SESSION['userid'];
@@ -13,7 +13,7 @@
 <script type="text/javascript">
   alert("삭제되었습니다.");
 </script>
-<meta http-equiv="refresh" content="0 url=/QNABoard.php" />
+<meta http-equiv="refresh" content="0 url=/board/QNABoard.php" />
 <?php
 } else { ?>
   <script type="text/javascript">

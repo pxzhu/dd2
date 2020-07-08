@@ -1,5 +1,5 @@
 <meta charset="utf-8" />
-<?php include "dbConn.php";
+<?php include "../db/dbConn.php";
 
 //POST로 받아온 아이다와 비밀번호가 비었다면 알림창을 띄우고 전 페이지로 돌아갑니다.
 if ($_POST['userid'] == "" || $_POST['userpw'] == "") {
@@ -22,7 +22,7 @@ if ($_POST['userid'] == "" || $_POST['userpw'] == "") {
         $_SESSION['userpw'] = $row["pw"];
         $_SESSION['username'] = $row["name"];
 
-        echo "<script>alert('로그인되었습니다.'); location.href='main.php';</script>";
+        echo "<script>alert('로그인되었습니다.'); location.href='../member/main.php';</script>";
         exit();
     } else { // 비밀번호가 같지 않다면 알림창을 띄우고 전 페이지로 돌아갑니다
         echo "<script>alert('아이디 혹은 비밀번호를 확인하세요.'); history.back();</script>";

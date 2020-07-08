@@ -1,4 +1,4 @@
-<?php include "dbConn.php";
+<?php include "/db/dbConn.php";
 
 if (isset($_SESSION['userid'])) {
     echo "<script>alert('잘못된 접근입니다.'); history.back();</script>";
@@ -43,7 +43,7 @@ if (isset($_SESSION['userid'])) {
 </head>
 
 <body>
-  <form onsubmit="return upCheckAll()"  name="form" class="find" method="post" action="memberPwUpdateOk.php">
+  <form onsubmit="return upCheckAll()"  name="form" class="find" method="post" action="/member/memberPwUpdateOk.php">
     <fieldset class="test">
       <table>
         <tr>

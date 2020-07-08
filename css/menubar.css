@@ -11,13 +11,15 @@
 .menubar ul {
     /*#D1B6E1 = rgb(209, 182, 225)*/
   background: rgb(209, 182, 225);
+  width: 377px;
   height: 50px;
   list-style: none;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
 }
 
 .menubar li {
+  text-align: center;
   float: left;
   padding: 0px;
 }
@@ -31,6 +33,7 @@
   margin: 0px;
   padding: 0px 25px;
   text-align: center;
+  text-decoration: none;
 }
 
 .menubar li a:hover, .menubar ul li:hover a {
@@ -47,8 +50,8 @@
   margin: 0px;
   border: 0px;
   position: absolute;
-  width: 200px;
-  z-index: 200;
+  width: 158px;
+  z-index: 1;
   /*top:1em;
   left:0;*/
 }
@@ -63,7 +66,7 @@
   float: none;
   margin: 0px;
   padding: 0px;
-  width: 200px;
+  width: 158px;
 }
 
 .menubar li:hover li a {
@@ -81,21 +84,13 @@
 }
 
 .menubar li ul a:hover, .menubar li ul li:hover a {
-  background: rgb(153, 102, 255);
+  background: #FFFFFF;
   border: 0px;
-  color: #ffffff;
+  color: #000000;
   text-decoration: none;
+  border: solid 1px #D1B6E1;
 }
 
 .menubar p {
   clear: left;
-}
-
-
-
-#button {
-  background: rgba(0,0,0,0);
-  border: solid 1px skyblue;
-  color:skyblue;
-  padding: 5px;
 }

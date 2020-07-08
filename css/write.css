@@ -1,69 +1,88 @@
-/* 게시판 글쓰기 */
-#board_write {
-  width: 900px;
-  position: relative;
+/* 글쓰기 */
+.boardW{
+  width: 600px;
   margin: 0 auto;
 }
-
-#write_area {
+.writeA{
   margin-top: 70px;
   font-size: 14px;
 }
+/* 글쓰기 끝 */
 
-#in_name {
-  margin-top: 30px;
+/* 제목 */
+.wirteT{
+  margin-top: 50px;
 }
-
-#in_name textarea {
+.wirteT textarea {
   font-weight: bold;
-  font-size: 26px;
-  color: #333;
-  width: 900px;
-  border: none;
+  font-size: 18px;
+  color: #000000;
+  background: #;
+  border: solid 1px #9DC8C8;
+  width: 600px;
+  height: 21px;
   resize: none;
 }
+/* 제목 끝 */
 
-#in_title {
-  margin-top: 30px;
+/* 내용 */
+.writeC {
+  margin-top: 15px;
+  margin-bottom: 5px;
 }
-
-#in_title textarea {
-  font-weight: bold;
-  font-size: 26px;
-  color: #333;
-  width: 900px;
-  border: none;
-  resize: none;
-}
-
-.wi_line {
-  border: solid 1px lightgray;
-  margin-top: 10px;
-}
-
-#in_content {
-  margin-top: 10px;
-}
-
-#in_content textarea {
-  font: 14px;
-  color: #333;
-  width: 900px;
+.writeC textarea {
+  font: 16px;
+  color: #000000;
+  background: #;
+  border: solid 1px #9DC8C8;
+  width: 600px;
   height: 400px;
   resize: none;
 }
+/* 내용 끝 */
 
-#in_pw input {
-  font: 14px;
-  margin-top: 10px;
-}
-
-.bt_se {
-  margin-top: 20px;
+/* 버튼 */
+.btn{
+  margin: 0 auto;
   text-align: center;
 }
-
-.bt_se button {
+.btn button{
+  margin-top: 20px;
   width: 100px;
-  height: 30px;
+  background: #D1B6E1;
+  border: solid 0px;
+  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 10px;
 }
+.btn button:hover{
+  margin-top: 20px;
+  width: 100px;
+  background: #519D9E;
+  border: solid 0px;
+  color: #000000;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 10px;
+}
+.btn input{
+  width: 100px;
+  background: #D1B6E1;
+  border: solid 0px;
+  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 10px;
+}
+.btn input:hover{
+  margin-top: 20px;
+  width: 100px;
+  background: #519D9E;
+  border: solid 0px;
+  color: #000000;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 10px;
+}
+/* 버튼 끝 */

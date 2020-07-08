@@ -1,4 +1,4 @@
-<?php include "dbConn.php";
+<?php include "/db/dbConn.php";
 
 if (isset($_SESSION['userid'])) {
     echo "<script>alert('잘못된 접근입니다.'); history.back();</script>";
@@ -28,8 +28,8 @@ if (isset($_SESSION['userid'])) {
 
 <body>
   <div class="find">
-    <li class="logo"><a href='main.php'>PCUSC</a></li>
-    <form method="post" action="memberFindId.php">
+    <li class="logo"><a href='/member/main.php'>PCUSC</a></li>
+    <form method="post" action="/member/memberFindId.php">
       <fieldset>
         <legend>아이디 찾기</legend>
         <table>
@@ -63,7 +63,7 @@ if (isset($_SESSION['userid'])) {
     </form>
   </div>
   <div class="find">
-    <form method="post" action="memberFindPw.php">
+    <form method="post" action="/member/memberFindPw.php">
       <fieldset>
         <legend>비밀번호 찾기</legend>
         <table>

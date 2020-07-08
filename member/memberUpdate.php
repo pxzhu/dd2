@@ -1,4 +1,4 @@
-<?php include "dbConn.php";
+<?php include "/db/dbConn.php";
 
 $pw = $_POST['userpw'];
 $pwc = $_POST['userpwc'];
@@ -16,7 +16,7 @@ $userid = $_SESSION["userid"];
 
 if ($_SESSION['userid'] != null) {
     $sql = mq("UPDATE users SET pw = '$pw', phoneN = '$phone' WHERE id = '$userid';");
-    echo "<script>alert('정보변경이 완료되었습니다'); location.href='main.php';</script>";
+    echo "<script>alert('정보변경이 완료되었습니다'); location.href='/member/main.php';</script>";
 } else {
     echo "<script>alert('잘못된 접근입니다.'); history.back();</script>";
 }

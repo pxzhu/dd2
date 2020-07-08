@@ -1,4 +1,4 @@
-<?php include "dbConn.php"; ?>
+<?php include "/db/dbConn.php"; ?>
 <!DOCTYPE html>
 
 <head>
@@ -10,8 +10,8 @@
 </head>
 
 <body>
-  <li class="logo"><a href='main.php'>PCUSC</a></li>
-    <form id="login_box" action="loginCheck.php" method="post">
+  <li class="logo"><a href='/member/main.php'>PCUSC</a></li>
+    <form id="login_box" action="/member/loginCheck.php" method="post">
       <table>
         <tr>
           <td>
@@ -31,8 +31,8 @@
       </table>
     </form>
     <nav class="find">
-      <a href="captchaCheck.php">회원가입 |</a>
-      <a href="memberFind.php">찾기</a>
+      <a href="/captcha/captchaCheck.php">회원가입 |</a>
+      <a href="/member/memberFind.php">찾기</a>
     </nav>
 </body>
 

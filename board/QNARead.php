@@ -1,4 +1,4 @@
-<?php include "dbConn.php";
+<?php include "../db/dbConn.php";
 $id = $_SESSION['userid'];
 ?>
 <!doctype html>
@@ -13,15 +13,15 @@ $id = $_SESSION['userid'];
   <script type="text/javascript" src="/js/common.js"></script>
 </head>
 <body>
-  <li class="logo"><a href='main.php'>PCUSC</a></li>
+  <li class="logo"><a href='/member/main.php'>PCUSC</a></li>
   <!--메뉴바 부분-->
   <div class="menubar">
     <ul>
       <li><a href="#" id="current">게시판</a>
         <ul>
-          <li><a href="noticeBoard.php">공지사항</a></li>
-          <li><a href="QNABoard.php">질문게시판</a></li>
-          <li><a href="SJBoard.php">선후배게시판</a></li>
+          <li><a href="/board/noticeBoard.php">공지사항</a></li>
+          <li><a href="/board/QNABoard.php">질문게시판</a></li>
+          <li><a href="/board/SJBoard.php">선후배게시판</a></li>
         </ul>
       </li>
       <li><a href="#" id="current">학과행사</a>
@@ -70,9 +70,9 @@ $id = $_SESSION['userid'];
     <!-- 목록, 수정, 삭제 -->
     <div class="board3">
       <ul>
-        <li><a href="QNABoard.php">[목록으로]</a></li>
-        <li><a href="QNAModify.php?idx=<?php echo $barray['idx']; ?>">[수정]</a></li>
-        <li><a href="QNADelete.php?idx=<?php echo $barray['idx']; ?>">[삭제]</a></li>
+        <li><a href="/board/QNABoard.php">[목록으로]</a></li>
+        <li><a href="/board/QNAModify.php?idx=<?php echo $barray['idx']; ?>">[수정]</a></li>
+        <li><a href="/board/QNADelete.php?idx=<?php echo $barray['idx']; ?>">[삭제]</a></li>
       </ul>
     </div>
     <!-- 목록, 수정, 삭제 끝 -->
@@ -81,7 +81,7 @@ $id = $_SESSION['userid'];
   <?php if(isset($id)){?>
   <!-- 댓글 입력 창 -->
   <div class="replyF">
-    <form method="post" class="reply_form" action="QNAReplyOk.php">
+    <form method="post" class="reply_form" action="/reply/QNAReplyOk.php">
       <input type="hidden" name="bno" value="<?php echo $bno; ?>">
       <div style="margin-top:10px;">
         <textarea name="content" class="replyC" required></textarea>
@@ -105,7 +105,7 @@ $id = $_SESSION['userid'];
       if ($id == $replyUserId) {
     ?>
     <!-- 댓글 삭제 -->
-    <form class="reDelB" method="post" action="replyDelete.php">
+    <form class="reDelB" method="post" action="/reply/QNAReplyDelete.php">
       <input type="hidden" name="bno" value="<?php echo $bno; ?>">
       <input type="hidden" name="content" value="<?php echo $reply['content']; ?>">
       <input type="hidden" name="date" value="<?php echo $reply['date']; ?>">

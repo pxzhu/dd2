@@ -1,4 +1,4 @@
-<?php include "dbConn.php";
+<?php include "../db/dbConn.php";
 
   $bno = $_POST['idx'];
   $title = $_POST['title'];
@@ -38,4 +38,4 @@
 <script type="text/javascript">
   alert("수정되었습니다.");
 </script>
-<meta http-equiv="refresh" content="0 url=/noticeRead.php?idx=<?php echo $bno; ?>">
+<meta http-equiv="refresh" content="0 url=/board/noticeRead.php?idx=<?php echo $bno; ?>">
